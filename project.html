@@ -1,0 +1,523 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Project - William Yang</title>
+		<link href="./css/bootstrap.css" rel="stylesheet" type="text/css"  media="all" />
+		<link href="./css/style.css" rel="stylesheet" type="text/css"  media="all" />
+		<link href="./css/prettyPhoto.css" rel="stylesheet" type="text/css"  media="all" />	
+		<link href="./css/project.css" rel="stylesheet" type="text/css"  media="all" />			
+		<link href='http://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>	
+	</head>
+	<body>
+		<!---start-wrap--->
+		<!---start-header--->
+	<div class="header">
+		<div class="wrap">
+			<!---start-logo--->
+			<div class="logo">
+				<a href="index.html">Shuai Yang</a>
+			</div>
+			<!---End-logo--->
+			<!---start-top-nav--->
+			<div class="top-nav">
+				<ul>
+					<li onclick="func('Research')" class="dropdown" >
+						<a id="Research" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" >
+						  Research Projects <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu bullet fadeIn" role="menu">
+						  <li id="dropdown-a"><a href="#research1"  class="scroll">Image Completion</a></li>
+						  <li id="dropdown-a"><a href="#research2"  class="scroll">Depth Enhancement</a></li>
+						  <li id="dropdown-a"><a href="#research3"  class="scroll">Image Stylization</a></li>
+						  <li id="dropdown-a"><a href="#research4"  class="scroll">Other Projects</a></li>
+						</ul>
+					</li>					
+					<li id="Course" onclick="func('Course')"><a href="#course" class="scroll">Course Projects</a></li>
+				</ul>
+			</div>
+			<div class="clear"> </div>
+			<!---End-top-nav--->
+	     </div>
+	</div>
+	
+	<script> 
+	var lastname = 'Research';
+	function func(name){
+		if (lastname == name){
+			return;
+		}
+		if(name == 'Course'){
+			var div = document.getElementById(name); 
+			div.className = 'active';
+			div = document.getElementById(lastname); 
+			div.style.borderTop="0px";
+			div.style.color="#ffffff";
+			lastname = name;
+		}
+		else
+		{
+			var div = document.getElementById(name); 
+			div.style.borderTop="5px solid #4dc9b0";
+			div.style.color="#4dc9b0";
+			div = document.getElementById(lastname); 
+			if (lastname == 'Course'){
+				div.className = ''; 				
+			}			
+			lastname = name;
+		}
+	}
+	function coming_soon()
+	{
+		alert("Coming soon.");
+	}
+	</script> 
+	
+	<!---End-wrap--->
+	<div class="content">
+		<div class="grid1" id="research">
+			<h3>Research Projects</h3>
+			<p></p>
+		</div>
+		<div class="grid3" id="research1">
+			<div class="grid3-header">
+				<img src="./images/33384-200.png" title="Artdirector" />
+				<p>Image Completion</p>
+			</div>
+			<div class="grid3-content">
+			    <div class="well well-lg">
+					<div class="name">
+						<p><b>Structure-Guided Image Completion via Regularity Statistics</b></p>
+						<small>ICASSP 2016<br/>Shuai Yang, Jiaying Liu, Sijie Song, Mading Li and Zongming Guo</small>
+					</div>
+					<div class="info">
+						<img src="images/project/ICASSP2016.png"></img>
+						<p>In this paper, we propose a novel hierarchical image completion approach using regularity statistics, considering structure features. </p>
+					</div>					
+					<div class="buttons">
+						<button type="button" class="btn btn-confirm" onclick= "window.open('http://www.icst.pku.edu.cn/struct/Pub%20Files/2016/ys_icassp16.pdf')">pdf</button>						
+						<button type="button" class="btn btn-confirm" onclick= "window.open('http://www.icst.pku.edu.cn/struct/Projects/HIC3D.html')">project</button>
+						<button type="button" class="btn btn-confirm"
+						  data-container="body" data-toggle="popover"  data-html="true" data-placement="bottom" 
+						  data-content="<div>@inproceedings{Yang2016Structure,<br/>
+						  &nbsp;&nbsp;&nbsp;title={Structure-guided image completion via regularity statistics},<br/>
+						  &nbsp;&nbsp;&nbsp;author={Yang, Shuai and Liu, Jiaying and Song, Sijie and Li, Mading and Guo, Zongming},<br/>
+						  &nbsp;&nbsp;&nbsp;booktitle={IEEE International Conference on Acoustics, Speech and Signal Processing},<br/>
+						  &nbsp;&nbsp;&nbsp;year={2016},<br/>
+						}</div>">cite
+						</button>						
+					</div>
+				</div>
+			</div>			
+		</div>
+		<div class="grid3" id="research2" style="background:#ffffff">
+			<div class="grid3-header">
+				<img src="./images/123911-200.png" title="Artdirector" />
+				<p>Depth Enhancement</p>
+			</div>
+			<div class="grid3-content">
+			    <div class="well well-lg well-gray">
+					<div class="name">
+						<p><b>Joint-Feature Guided Depth Map Super-Resolution With Face Priors</b></p>
+						<small>TCYB 2018<br/>Shuai Yang, Jiaying Liu, Yuming Fang and Zongming Guo.</small>
+					</div>
+					<div class="info">
+						<img src="images/project/TCYB2017.png"></img>
+						<p>In this paper, we present a novel method to super-solve and recover the facial depth map nicely. The key idea of our approach is to exploit the exemplar-based method to obtain the reliable face priors from high quality facial depth map to further improve the depth image.</p>
+					</div>					
+					<div class="buttons">
+						<button type="button" class="btn btn-confirm" onclick= "window.open('http://www.icst.pku.edu.cn/struct/Projects/JFSR/files/tcyb_yang16.pdf')">pdf</button>
+						<button type="button" class="btn btn-confirm" onclick= "window.open('http://www.icst.pku.edu.cn/struct/Projects/JFSR.html')">project</button>
+						<button type="button" class="btn btn-confirm"
+						  data-container="body" data-toggle="popover"  data-html="true" data-placement="bottom" 
+						  data-content="<div>@article{Yang2016Joint,<br/>
+							&nbsp;&nbsp;&nbsp;title={Joint-Feature Guided Depth Map Super-Resolution With Face Priors},<br/>
+							&nbsp;&nbsp;&nbsp;author={Yang, Shuai and Liu, Jiaying and Fang, Yuming and Guo, Zongming},<br/>
+							&nbsp;&nbsp;&nbsp;journal={IEEE Transactions on Cybernetics},<br/>
+							&nbsp;&nbsp;&nbsp;volume={PP},<br/>
+							&nbsp;&nbsp;&nbsp;number={99},<br/>
+							&nbsp;&nbsp;&nbsp;pages={1-13},<br/>
+							&nbsp;&nbsp;&nbsp;year={2016},<br/>
+						}</div>">cite
+						</button>		
+					</div>	<hr/>							
+					<div class="name">						
+						<p><b>Facial Depth Map Enhancement via Neighbor Embedding</b></p>
+						<small>ICPR 2016<br/>Shuai Yang, Sijie Song, Qikun Guo, Xiaoqing Lu and Jiaying Liu.</small>
+					</div>
+					<div class="info"></div>
+					<div class="info" id="ICPR2016-more" style="display:none">
+						<img src="images/project/ICPR2016.jpg"></img>
+						<p>In this paper, we present a novel method to super-solve and recover the facial depth map nicely. The key idea of our approach is to exploit the learning-based method to obtain the reliable face priors from high quality facial depth map to further improve the depth image.</p>
+					</div>					
+					<div class="buttons">
+						<button type="button" class="btn btn-confirm" onclick= "window.open('http://www.icst.pku.edu.cn/course/icb/Pub%20Files/2016/ys_icpr16.pdf')">pdf</button>
+						<button type="button" class="btn btn-confirm" onclick= "javascript:coming_soon()" style="display:none">project</button>
+						<button type="button" class="btn btn-confirm"
+						  data-container="body" data-toggle="popover"  data-html="true" data-placement="bottom" 
+						  data-content="<div>@inproceedings{Yang2016Facial,<br/>
+						  &nbsp;&nbsp;&nbsp;title={Facial Depth Map Enhancement via Neighbor Embedding},<br/>
+						  &nbsp;&nbsp;&nbsp;author={Yang. Shuai, Song. Sijie, Guo. Qikun, and Liu. Jiaying},<br/>
+						  &nbsp;&nbsp;&nbsp;booktitle={IEEE International Conference on Pattern Recognition},<br/>
+						  &nbsp;&nbsp;&nbsp;year={2016},<br/>
+						}</div>">cite
+						</button>	
+						<button type="button" id="ICPR2016-more-button" class="btn btn-confirm" onClick="$use('ICPR2016-more','ICPR2016-more-button')">unfold</button>						
+					</div>
+				</div>
+			</div>			
+		</div>
+		<div class="grid3" id="research3">
+			<div class="grid3-header">
+				<img src="./images/3991-200.png" title="Artdirector" />
+				<p>Image Stylization</p>
+			</div>
+			<div class="grid3-content">
+			    <div class="well well-lg">
+					<div class="name">
+						<p><b>Awesome Typography: Statistics-Based Text Effects Transfer</b></p>
+						<small>CVPR 2017<br/>Shuai Yang, Jiaying Liu, Zhouhui Lian and Zongming Guo.</small>
+					</div>
+					<div class="info">
+						<img src="images/project/CVPR2017.png"></img>
+						<p> This work explores the problem of generating fantastic special-effects for the typography.
+						 our key idea is to exploit the analytics on the high regularity of the texture spatial distribution for text effects to guide the synthesis process. </p>
+					</div>
+					<div class="buttons">
+						<button type="button" class="btn btn-confirm" onclick= "window.open('https://arxiv.org/abs/1611.09026')">pdf</button>
+						<button type="button" class="btn btn-confirm" onclick= "window.open('http://www.icst.pku.edu.cn/struct/Projects/TET.html')">project</button>
+						<button type="button" class="btn btn-confirm" onclick= "window.open('https://github.com/williamyang1991/Text-Effects-Transfer/tree/release')">code</button>									
+					</div>					
+				</div>
+			</div>		
+		</div>
+		<div class="grid3" id="research4" style="background:#ffffff">
+			<div class="grid3-header">
+				<img src="./images/s3.png" title="Artdirector" />
+				<p>Other Projects</p>
+			</div>
+			<div class="grid3-content">
+			    <div class="well well-lg well-gray">
+					<div class="name">
+						<p><b>1+N Fusion: Cascaded Self-Portrait Enhancement</b></p>
+						<small>ICASSP 2017<br/>Shuai Yang, Jiaying Liu, Sifeng Xia and Zongming Guo.</small>
+					</div>
+					<div class="info">
+						<img src="images/project/ICASSP2017.png"></img>
+						<p>This work presents a novel cascaded framework to solve a self-portrait enhancement problem we call ''1+N'' problem,
+						in which a self-portrait is enhanced with the help of N supporting photos that share the same scene and similar shooting time. </p>
+					</div>					
+					<div class="buttons">
+						<button type="button" class="btn btn-confirm" onclick= "window.open('http://www.icst.pku.edu.cn/struct/Pub%20Files/2017/ys_icassp17.pdf')"> <!--style="display:none"--> pdf</button>
+						<button type="button" class="btn btn-confirm" onclick= "window.open('http://www.icst.pku.edu.cn/struct/Projects/1plusn.html')">project</button>
+						<button type="button" class="btn btn-confirm" 
+						  data-container="body" data-toggle="popover"  data-html="true" data-placement="bottom" 
+						  data-content="<div>@inproceedings{Yang2017Fusion,<br/>
+						  &nbsp;&nbsp;&nbsp;title={1+N Fusion: Cascaded Self-Portrait Enhancement},<br/>
+						  &nbsp;&nbsp;&nbsp;author={Yang, Shuai and Liu, Jiaying and Xia, Sifeng and Guo, Zongming},<br/>
+						  &nbsp;&nbsp;&nbsp;booktitle={IEEE International Conference on Acoustics, Speech, and Signal Processing},<br/>
+						  &nbsp;&nbsp;&nbsp;year={2017},<br/>
+						}</div>"> <!--style="display:none"--> cite
+						</button>						
+					</div>
+				</div>			
+			    <div class="well well-lg well-gray">
+					<div class="name">
+						<p><b>Perspective Distorted Video Restoration and Stabilization For Mobile Devices</b></p>
+						<small>ChinaSIP 2015<br/>Shuai Yang, Jiaying Liu, Wenhan Yang and Zongming Guo.</small>
+					</div>
+					<div class="info">
+						<img src="images/project/ChinaSIP2015.png"></img>
+						<p>This paper presents a novel perspective distorted video restoration and stabilization approach for mobile devices.</p>
+					</div>					
+					<div class="buttons">
+						<button type="button" class="btn btn-confirm" onclick= "window.open('http://www.icst.pku.edu.cn/struct/Pub%20Files/2015/ys_chinasip15.pdf')">pdf</button>
+						<button type="button" class="btn btn-confirm" onclick= "window.open('http://www.icst.pku.edu.cn/struct/Projects/PICE.html')">project</button>
+						<button type="button" class="btn btn-confirm"
+						  data-container="body" data-toggle="popover"  data-html="true" data-placement="bottom" 
+						  data-content="<div>@inproceedings{Yang2015Perspective,<br/>
+						  &nbsp;&nbsp;&nbsp;title={Perspective distorted video restoration and stabilization for mobile devices},<br/>
+						  &nbsp;&nbsp;&nbsp;author={Yang, Shuai and Liu, Jiaying and Yang, Wenhan and Guo, Zongming},<br/>
+						  &nbsp;&nbsp;&nbsp;booktitle={IEEE China Summit and International Conference on Signal and Information Processing},<br/>
+						  &nbsp;&nbsp;&nbsp;year={2015},<br/>
+						}</div>">cite
+						</button>						
+					</div>
+				</div>				
+			</div>				
+		</div>		
+			
+		<div class="grid1" id="course">
+			<h3>Course Projects</h3>
+			<p></p>
+		</div>
+		<div class="grid3">
+			<div class="grid3-content">
+			    <div class="well well-lg" id="LogoDetect">
+					<div class="name">
+						<p><b>Logo Detection System</b></p>
+						<small> Digital Image Processing, 2016 <br/>Shuai Yang, Yanghao Li and Yicheng Huang</small>
+					</div>
+					<div class="info">
+						<img src="images/project/logodetect.jpg"></img>
+						<p>Implemented SIFT-based and deep-based image detection algorithm.</p>
+					</div>	
+					<div class="info" id="logoDetect-more" style="display:none">
+						<hr/>
+						<h3>System Functions</h3>
+						<ul>
+							<li>View dataset by category</li>
+							<li>View detection results and the groundtruth</li>
+							<li>Single image detection and batch detection</li>
+							<li>Caculate mean average precision</li>
+							<li>Three different algorithms to select</li>
+						</ul>
+						<h3>Algorithms</h3>
+						<ul>
+							<li><i>SIFT-based:</i> SIFT features are matched between the test image and training images to estimate affine transformations. The masks of training images are warped onto the test image and then accumulated to form a confidence map. The logo is extracted using the region growing algorithm over the confidence map.</li>
+							<li><i>Multi-Task Deep Networks:</i> Images are divided into K*K grids. Deep networks based on Inception-BN is used to classify each grid.</li>
+							<li><i>Fast R-CNN:</i> Implemented the paper: Ross Girshick. Fast R-CNN. ICCV 2015.</li>
+						</ul>						
+						<h3>Detection Results</h3>
+						<p>We tested on the FlickrLogos-32 dataset. The MAPs of our three algorithms are as follows:</p>
+						<img src="images/project/logodetect3.jpg"></img>
+						<p>We have also analyzed their performances in six respects:</p>
+						<img src="images/project/logodetect2.jpg"></img>
+					</div>						
+					<div class="buttons">
+						<button type="button" id="logoDetect-more-button" class="btn btn-confirm" onClick="$use('logoDetect-more','logoDetect-more-button')">unfold</button>				
+					</div>				
+				</div>
+				
+			    <div class="well well-lg" id="ImageRec">
+					<div class="name">
+						<p><b>Simple Image Recognition System</b></p>
+						<small> Digital Image Processing, 2014 <br/>Shuai Yang and Guangyuan Yang</small>
+					</div>
+					<div class="info">
+						<img src="images/project/ir.png"></img>
+						<p>Implemented the paper: Nister, David, Stewenius, Henrik. Scalable Recognition with a Vocabulary Tree. 2006:2161-2168. </p>
+					</div>	
+					<div class="info" id="imageRec-more" style="display:none">
+						<hr/>
+						<h3>System Functions</h3>
+						<ul>
+							<li>Extract SIFT Features</li>
+							<li>Build Vocabulary Tree</li>
+							<li>Quantify Images as Vectors</li>
+							<li>Find the most Similar Images</li>
+						</ul>
+						<p>Here are some query results of our system. The first column is the query image and the last three columns are the corresponding query results.</p>
+						<img src="images/project/ir2.png"></img>						
+					</div>						
+					<div class="buttons">
+						<button type="button" id="imageRec-more-button" class="btn btn-confirm" onClick="$use('imageRec-more','imageRec-more-button')">unfold</button>				
+					</div>				
+				</div>
+				
+			    <div class="well well-lg" id="VideoPro">
+					<div class="name">
+						<p><b>Simple Video Processing System</b></p>
+						<small> Digital Video Processing and Analysis, 2014 <br/>Shuai Yang, Li Meng and Chong Ruan</small>
+					</div>
+					<div class="info">
+						<img src="images/project/vp.png"></img>
+						<p>Implemented a video processing system that provides vide coding/decoding, stabilization and denoising functions. </p>
+					</div>	
+					<div class="info" id="videoPro-more" style="display:none">
+						<hr/>
+						<h3>Video Codec</h3>
+						<ul>
+							<li>Use ffmpeg to decode every frame from the video</li>
+							<li>Convert the AVFrame to IplImage, then  stabilize or denoise the image</li>
+							<li>Convert the handled IplImage to AVFrame then write to a raw video</li>
+							<li>Encode the raw video </li>
+						</ul>
+						<h3>Video Stabilization</h3>
+						<ul>
+							<li>A pyramidal version of Lucas-Kanade optical flow computation</li>
+							<li>A six-parameters affine transformation model</li>
+							<li>A Gaussian motion smoothing</li>
+						</ul>
+						<h3>Denoising</h3>
+						<ul>
+							<li>Non-Local Means filter </li>
+						</ul>						
+					</div>						
+					<div class="buttons">
+						<button type="button" id="videoPro-more-button" class="btn btn-confirm" onClick="$use('videoPro-more','videoPro-more-button')">unfold</button>				
+					</div>				
+				</div>
+				
+			    <div class="well well-lg" id="eCourse">
+					<div class="name">
+						<p><b>e-Course</b></p>
+						<small> Computer Networks (Honor Track), 2014 <br/>Shuai Yang, Yuan Huang, Gaoxiang Zhang and Ran Wang</small>
+					</div>
+					<div class="info">
+						<img src="images/project/ecourse.jpg"></img>
+						<p>e-Course is a mobile application helping Peking University students to select, comment and search courses. *I tried to make my PPT professional*</p>
+					</div>	
+					<div class="info" id="eCourse-more" style="display:none">
+						<hr/>
+						<p>It is common for students to share course information with each other using online social networks (OSN). However, it is difficult to organize and categorize the information posted by individuals in an ad hoc way on OSN. Our application provides students a venue to publish their ratings to every course they have taken in an organized way such that others can find useful course information from experienced students in an easy and reliable way. </p>
+						<h3>Project Presentation</h3>
+						<p>Click the picture below to see the project presentation:</p>
+						<div class="portfolio-item">
+							<div class="hover-bg" style="width:400px;height:300px;margin-left:auto;margin-right:auto"> <a href="images/project/ecourse1.jpg" title="e-Course" rel="prettyPhoto">
+							  <div class="hover-text">
+								<h4>e-Course</h4>
+								<small>e-Course presentation</small>								
+								<div class="clearfix"></div>
+								</div>
+							  <img src="images/portfolio/UI1.jpg" class="img-responsive" alt="e-Course"> </a> </div>
+						</div>
+					</div>						
+					<div class="buttons">
+						<button type="button" id="eCourse-more-button" class="btn btn-confirm" onClick="$use('eCourse-more','eCourse-more-button')">unfold</button>				
+					</div>				
+				</div>
+				
+			    <div class="well well-lg" id="CPU">
+					<div class="name">
+						<p><b>CPU Simulator</b></p>
+						<small>Computer Architectures, 2014 <br/>Shuai Yang, Yuan Huang and Gaoxiang Zhang</small>
+					</div>
+					<div class="info">
+						<img src="images/project/CPU.jpg"></img>
+						<p>We learned MIPS and how CPU ran machine codes in pipeline this semester. We were asked to use C++ to simulate a CPU.</p>
+					</div>	
+					<div class="info" id="CPU-more" style="display:none">
+						<hr/>
+						<p>Our program reads in assembler codes(which will then translated into machine codes) or machine codes and simulates how a CPU runs them. We provide CPUs with and without pipeline. In pipeline mode, our program handles data hazard and control hazard. The MFC GUI makes our program easy for users to understand the computer operational principle.</p>
+						<h3>CPU Simulator without Pipeline</h3>
+						<img src="images/project/CPU1.jpg"></img>
+						<h3>CPU Simulator with Pipeline</h3>
+						<img src="images/project/CPU2.jpg"></img>				
+					</div>						
+					<div class="buttons">
+						<button type="button" id="CPU-more-button" class="btn btn-confirm" onClick="$use('CPU-more','CPU-more-button')">unfold</button>
+						<button type="button" class="btn btn-confirm" onclick= "javascript:location='http://pan.baidu.com/s/1eS2pQV4'">executable file</button>						
+					</div>				
+				</div>
+				
+			    <div class="well well-lg" id="Taiko">
+					<div class="name">
+						<p><b>Taiko</b></p>
+						<small>Java Programming, 2013 <br/>Shuai Yang, Yiming Wu, Yiqing Xue and Zheng Huang</small>
+					</div>
+					<div class="info">
+						<img src="images/project/taiko.jpg"></img>
+						<p>Our team members like to play the music game OSU!. Therefore we developed our own Taiko.</p>
+					</div>	
+					<div class="info" id="taiko-more" style="display:none">
+						<hr/>
+						<h3>Game User Interface</h3>
+						<p>The drumbeats come out from both left side and right side, with characters (A, S, ;, ') on them. Players shall push corresponding buttons when drumbeats moving into the centre circle.</p>
+						<img src="images/project/taiko2.jpg"></img>
+						<h3>Evaluation System</h3>
+						<p>We evaluate players' performances according to valid drum beats, the precision and combos. We have five ranks: S, A, B, C, D.</p>
+						<img src="images/project/taiko1.jpg"></img>				
+					</div>						
+					<div class="buttons">
+						<button type="button" id="taiko-more-button" class="btn btn-confirm" onClick="$use('taiko-more','taiko-more-button')">unfold</button>
+						<button type="button" class="btn btn-confirm" onclick= "javascript:alert('The .exe file is generated from .class file and it is not guaranteed to work on every computer.');location='http://yun.baidu.com/share/link?shareid=1237956819&uk=1930114363&third=0'">executable file</button>
+					</div>				
+				</div>
+			
+			    <div class="well well-lg" id="LinkGame">
+					<div class="name">
+						<p><b>LinkGame</b></p>
+						<small>Practice of Data Structure and Algorithm, 2012 <br/>Shuai Yang, Yiming Wu and Yiqing Xue</small>
+					</div>
+					<div class="info">
+						<img src="images/project/linkgame.jpg"></img>
+						<p>My first attempt at an MFC GUI. It's much more difficult than it looks :)</p>
+					</div>	
+					<div class="info" id="linkgame-more" style="display:none">
+						<hr/>
+						<p>Our team endeavoured to give users good experiences. Thus we learned MFC and designed the interface by ourselves. Here is the stage introduction:</p>
+						<h3>STAGE ONE</h3>
+						<p>This stage contains EECS mascots designed by Shuai Yang and Yiqing Xue. They looks cute but the game may not be as easy as you think.</p>
+						<img src="images/project/llk_stage1.png"></img>
+						<h3>STAGE TWO</h3>
+						<p>This stage contains similar characters, which needs more time and concentration to differentiate. Note that even the same characters may have different fonts :-P</p>
+						<img src="images/project/llk_stage2.png"></img>
+						<h3>STAGE THREE</h3>
+						<p>This stage is the extension of Stage Two. You need click the picture to turn over it and get characters. After this stage, we will embrace the ultimate stage with extraordinary difficulty.</p>
+						<img src="images/project/llk_stage3.png"></img>
+						<h3>STAGE FOUR</h3>
+						<p>……, ……, ……, well well ╮(￣▽￣")╭</p>
+						<img src="images/project/llk_stage4.png"></img>						
+					</div>						
+					<div class="buttons">
+						<button type="button" id="linkgame-more-button" class="btn btn-confirm" onClick="$use('linkgame-more','linkgame-more-button')">unfold</button>			
+						<button type="button" class="btn btn-confirm" onclick= "javascript:location='http://yun.baidu.com/s/1jGfZ0pC'">executable file</button>
+					</div>				
+				</div>
+			
+			    <div class="well well-lg" id="Gobang">
+					<div class="name">
+						<p><b>Leisure Gobang</b></p>
+						<small>Introduction to Computation, 2010 <br/>Shuai Yang</small>
+					</div>
+					<div class="info">
+						<img src="images/project/gobang.png"></img>
+						<p>It's really a challenge for me to come up with an AI smart enough to battle with human after only half a year's study of programming.</p>
+					</div>	
+					<div class="info" id="gobang-more" style="display:none">
+						<hr/>					
+						<p>In this project, though knowing nothing about GUI, I tried to make the character-based interface user-friendly. Here is the start screen:</p>
+						<img src="images/project/gobang1.jpg"></img>
+						<p>And this is the game user interface:</p>
+						<img src="images/project/gobang2.jpg"></img>
+						<p>I have also added winning and losing pictures using ASCII art.</p>
+					</div>						
+					<div class="buttons">
+						<button type="button" id="gabong-more-button" class="btn btn-confirm" onClick="$use('gobang-more','gabong-more-button')">unfold</button>			
+						<button type="button" class="btn btn-confirm" onclick= "javascript:location='projects/gobang.cpp.html'">code</button>
+					</div>				
+				</div>
+			</div>				
+		</div>				
+		<div class="footer">
+			<p>2016 Shuai Yang. Powered by <a href="http://w3layouts.com/">w3layouts</a>, <a href="http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/">prettyPhoto</a>, <a href="http://getbootstrap.com/2.3.2/">bootstrap</a>, <a href="http://isotope.metafizzy.co/">Isotope</a></p>
+		</div>
+	</div>
+	
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/jquery.banner.js"></script>
+		<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>		
+		<script type="text/javascript" src="js/jquery.isotope.js"></script>	
+		<script type="text/javascript" src="js/main.js"></script>	
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},800);
+				});
+			});		
+			$(function () 
+			  { $("[data-toggle='popover']").popover();
+			  });
+			function $use(targetid,objN){
+				var d=document.getElementById(targetid);
+				var sb=document.getElementById(objN);
+				$("#"+targetid).toggle(1000);
+				if (sb.innerHTML=="unfold"){
+					sb.innerHTML="fold";
+				} else {
+					sb.innerHTML='unfold';
+				}
+			}
+		</script>   		
+	</body>
+</html>
+
