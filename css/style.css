@@ -258,7 +258,7 @@ i{
 .grid3-header p{
 	font-family: 'gandhi_sansregular';
 	color: #2A323A;
-	font-size: 1.4em;
+	font-size: 1.2em;
 	line-height: 1.5em;
 	padding-bottom: 20px;
 }
@@ -501,6 +501,81 @@ i{
 .footer p a:hover{
 	color:#fff;
 }
+/*-----publication entity----*/
+.publication-entity {
+	font-family: 'gandhi_sansregular';
+	font-size: 1.2em;
+	text-align:justify;
+	margin-top: 20px;
+	line-height: 1.5em;
+}
+.paper-image {
+	width: 100%;
+}
+.paper-title {
+	font-size: 1.1em;
+	font-weight: bold;
+}
+.paper-authors {
+}
+.paper-venue {
+}
+.paper-link a{
+	font-family: 'gandhi_sansregular';
+	font-size: 0.8em;
+}
+.btn-confirm {
+  margin-right: 5px;
+  padding: 0px 10px;;
+}
+
+.btn-confirm {
+  color: #ffffff;
+  background-color: #3a424a;
+	transition: 0.5s ease;
+	-o-transition: 0.5s ease;
+	-webkit-transition: 0.5s ease;
+}
+
+.btn-confirm:hover,
+.btn-confirm:focus,
+.btn-confirm:active,
+.btn-confirm.active,
+.open .dropdown-toggle.btn-confirm {
+  color: #ffffff;
+  background-color:#4dc9b0;
+}
+
+.btn-confirm:active,
+.btn-confirm.active,
+.open .dropdown-toggle.btn-confirm {
+  background-image: none;
+}
+
+.btn-confirm.disabled,
+.btn-confirm[disabled],
+fieldset[disabled] .btn-confirm,
+.btn-confirm.disabled:hover,
+.btn-confirm[disabled]:hover,
+fieldset[disabled] .btn-confirm:hover,
+.btn-confirm.disabled:focus,
+.btn-confirm[disabled]:focus,
+fieldset[disabled] .btn-confirm:focus,
+.btn-confirm.disabled:active,
+.btn-confirm[disabled]:active,
+fieldset[disabled] .btn-confirm:active,
+.btn-confirm.disabled.active,
+.btn-confirm[disabled].active,
+fieldset[disabled] .btn-confirm.active {
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+
+.btn-confirm .badge {
+  color: #5cb85c;
+  background-color: #fff;
+}
+
 /*----responsive design----*/
 @media only screen and (max-width: 1366px) and (min-width: 1280px) {
 	.wrap{
