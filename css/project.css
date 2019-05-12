@@ -28,6 +28,13 @@
 	-moz-box-shadow:0 0 10px rgba(0, 0, 0, .15);  
 	box-shadow:0 0 10px rgba(0, 0, 0, .15); 
 }
+.grid3-header p{
+	font-family: 'gandhi_sansregular';
+	color: #2A323A;
+	font-size: 1.4em;
+	line-height: 1.5em;
+	padding-bottom: 20px;
+}
 .name p{
 	padding: 10px 0;
 	font-size: 99%;
