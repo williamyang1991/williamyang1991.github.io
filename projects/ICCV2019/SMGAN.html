@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0050)http://www.icst.pku.edu.cn/course/icb/MRS_MCI.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="language" content="english">
+<title>Text Effects Transfer</title>
+<meta name="description" content="Controllable Text Style Transfer">
+<meta name="author" content="Shuai Yang">
+<link rel="icon" type="image/x-icon" href="http://www.icst.pku.edu.cn/favicon.ico">
+<link rel="stylesheet" type="text/css" href="SMGAN/css/project.css">
+</head>
+	<script> 
+	function coming_soon()
+	{
+		alert("We are cleaning up our code to make it more simple and readable");
+	}
+	</script> 
+
+<body>
+<div id="main">
+  
+	<div class="content"><br>
+		<div class="title">
+			<p class="banner"align="center">Accepted by ICCV 2019</p>
+			<h1>Controllable Artistic Text Style Transfer<br/> via Shape-Matching GAN</h1>
+		</div>
+		<div class="authors">
+			<div class='author'>
+				 <A href="mailto:williamyang@pku.edu.cn" style="text-decoration: none">Shuai Yang</A>
+		    </div>
+			<div class='author'>
+				 <A href="mailto:atlaswang@tamu.edu" style="text-decoration: none">Zhangyang Wang</A>
+			</div>
+			<div class='author'>
+				 <A href="mailto:zhawang@adobe.com" style="text-decoration: none">Zhaowen Wang</A>
+			</div>
+			<div class='author'>
+				 <A href="mailto:xn8812@gmail.com" style="text-decoration: none">Ning Xu</A>
+			</div>			
+			<div class='author'>
+				 <A href="mailto:liujiaying@pku.edu.cn" style="text-decoration: none">Jiaying Liu</A>
+			</div>
+			<div class='author'>
+				 <A href="mailto:guozongming@pku.edu.cn" style="text-decoration: none">Zongming Guo</A>
+			</div>			
+		</div>
+		<br>
+		
+		<div class="overview sec">
+			<div class="image" style="padding: 2em 0 0.5em 0">
+				<table border="0" width='100%' style="FONT-SIZE:15" >
+				 <tr align="center">
+					<td width="13.55%" align="left"><img src="SMGAN/figures/teaser-a.jpg" alt="" width="99%" ></td>
+					<td width="33.67%"><img src="SMGAN/figures/teaser-b.png" alt="" width="99%" ></td>
+					<td width="34.48%"><img src="SMGAN/figures/teaser-c.gif" alt="" width="99%" ></td>	
+					<td width="18.30%" align="right"><img src="SMGAN/figures/teaser-d.gif" alt="" width="99%" ></td>
+				 </tr>
+				 <tr align="center">
+					<td>(a) source image</td><td>(b) adjustable stylistic degree of glyph</td><td>(c) stylized text</td><td>(d) application</td>
+				</tr>					 
+				 </table>
+				 <table border="0" width='100%' style="FONT-SIZE:15" >
+				 <tr align="center">
+					<td align="left" width="50%"><img src="SMGAN/figures/teaser-e.gif" alt="" width="99%" ></td>	
+					<td align="right" width="50%"><img src="SMGAN/figures/teaser-f.gif" alt="" width="99%" ></td>						
+				 </tr>					 
+				 <tr align="center">
+					<td>(e) liquid artistic text rendering</td><td>(f) smoke artistic text rendering</td>
+				</tr>	
+				</table>
+		  		<p style="text-align: justify">Figure 1. We propose a novel style transfer framework for rendering artistic text from a source style image in a scale-controllable manner. Our framework allows users to (b) adjust the stylistic degree of the glyph (i.e. deformation degree) in a continuous and real-time way, and therefore to (c) select the artistic text that is most ideal for both legibility and style consistency. The generated diverse artistic text will facilitate users to design (d) exquisite posters and (e)(f) dynamic typography.</p>
+	  		</div>
+	  	</div>
+		
+		<div class="abstract_sec">
+			<h2>Abstract</h2>
+			<div class='desp'>
+				<p style="text-align:justify">
+					Artistic text style transfer is the task of migrating the style from a source image to the target text to create artistic typography. Recent style transfer methods have considered texture control to enhance usability. However, controlling the stylistic degree in terms of shape deformation remains an important open challenge. In this paper, we present the first text style transfer network that allows for real-time control of the crucial stylistic degree of the glyph through an adjustable parameter. Our key contribution is a novel bidirectional shape matching framework to establish an effective glyph-style mapping at various deformation levels without paired ground truth. Based on this idea, we propose a scale-controllable module to empower a single network to continuously characterize the multi-scale shape features of the style image and transfer these features to the target text. The proposed method demonstrates its superiority over previous state-of-the-arts in generating diverse, controllable and high-quality stylized text.
+				 </p>
+			</div>
+		</div>
+
+		<div class="abstract_sec">
+			<h2>Framework</h2>
+			<div class="images">
+		  		<img src='SMGAN/figures/framework.png' width='100%' alt="Teaser" >
+		  		<p style="text-align: center">Figure 2. Overview of our bidirectional shape matching framework.</p>
+	  		</div>
+	  	</div>	
+
+		
+		<div class="download_sec">
+			<h2>Resources</h2>
+			<div>
+				<li><strong>Paper</strong>: <a href="https://arxiv.org/abs/1905.01354">arXiv</a></li>
+				<li><strong>Released Code</strong>: coming soon</li>
+			</div>
+		</div>
+
+		<div class='citation_sec'>
+			<h2>Citation</h2>
+			<p class='bibtex'>@inproceedings{Yang2019Controllable,
+ title={Controllable Artistic Text Style Transfer via Shape-Matching GAN},
+ author={Yang, Shuai and Wang, Zhangyang and Wang, Zhaowen and Xu, Ning<br/> and Liu, Jiaying and Guo, Zongming},
+ booktitle={International Conference on Computer Vision},
+ year={2019}
+}</p>
+		</div>
+
+		<div class="experiments_sec">
+			<h2>Selected Results</h2>
+			<div id="images">
+				<img src="SMGAN/figures/compare.png" alt="" width="100%" >		
+				<P style="text-align: justify">Figure 3. Comparison with state-of-the-art methods on various styles. (a) Input style with its structure map in the lower-left corner. (b) Target text. (c) Image Analogy [1]. (d) Neural Style Transfer [2] with spatial control [3]. (e) Neural Doodle [4]. (f) T-Effect [5]. (g) UT-Effect [6]. (h) Our style transfer results. We manually select the suitable deformation degrees for UT-Effect [6] and out method.</P>	
+			</div>	
+			<div id="images">
+				<img src="SMGAN/figures/compare2.png" alt="" width="100%" >		
+				<P style="text-align: justify">Figure 4. Qualitative comparison between the proposed method and other scale-controllable style transfer methods. For the first column, from top to bottom: the target text and style image. Remaining columns: Results by (a) UT-Effect [6] with resolution level evenly increasing from 1 to 7; (b) the proposed method with <em>l</em> evenly increasing from 0 to 1. All results are produced by one single model for each method. The red box region is shown enlarged in the bottom with the corresponding structure map provided for better visual comparison.</P>	
+			</div>			
+			
+		</div>
+		
+		<div class="reference_sec">
+		<h2>Reference</h2>
+		  <div class="bib">
+		    <p>[1] A. Hertzmann, C. E. Jacobs, N. Oliver, B. Curless, and D. H. Salesin. Image analogies. SIGGRAPH 2001.</p>
+		    <p>[2] L. A. Gatys, A. S. Ecker, and M. Bethge. Image style transfer using convolutional neural networks. CVPR 2016.</p>
+		  	<p>[3] L. A. Gatys, A. S. Ecker, M. Bethge, A. Hertzmann, and E. Shechtman. Controlling perceptual factors in neural style transfer. CVPR 2017.</p>
+			<p>[4] A. J. Champandard. Semantic style transfer and turning two-bit doodles into fine artworks. arXiv:1603.01768, 2016</p>
+			<p>[5] S. Yang, J. Liu, Z. Lian, and Z. Guo. Awesome typography: Statistics-based text effects transfer. CVPR 2017.</p>
+			<p>[6] S. Yang, J. Liu, W. Yang, and Z. Guo. Context-aware textbased binary image stylization and synthesis. TIP 2019.</p>
+		  </div>
+	</div>
+		
+		
+		<br></br> 
+
+
+	<p class="banner"align="center">Last update: July 2019</p>
+  </div>
+</div>
+</body>
+</html>
