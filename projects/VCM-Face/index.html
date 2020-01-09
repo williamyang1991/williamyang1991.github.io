@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="language" content="english">
 <title>Video Coding for Machine</title>
-<meta name="description" content="Text Effects Transfer">
+<meta name="description" content="VCM">
 <meta name="author" content="Shuai Yang">
 <link rel="icon" type="image/x-icon" href="http://www.icst.pku.edu.cn/favicon.ico">
 <link rel="stylesheet" type="text/css" href="VCM-Face/css/project.css">
@@ -73,8 +73,14 @@
 		</div>
 
 
-		<div class="experiments_sec">
+		<div class="experiments_sec">		
 			<h2>Selected Results</h2>
+				<p style="text-align:justify">
+				 <b>Human Vision: Visual Quality Evaluation.</b> In Figure 1, we present a visual comparison of the proposed method with JPEG compression under different quality parameters (qp), which are selected to matches the bit-rate of our method for fair comparison. It can be observed that JPEG compression yields distinct block artifacts, which greatly decrease visual quality. By comparison, our method produces more natural results.
+				 </p>		
+				 <p style="text-align:justify">
+				 <b>Machine Vision: Landmark Detection.</b> The machine vision performance is tested on the high-level facial landmark detection task. We perform facial landmark detection on the original VGGFace2 dataset [1] and the reconstructed dataset by JPEG and our method. Detection results on the original data are served as ground truth. We then calculate the normalized point-to-point error (NME) between the detection results on the compressed data and the ground truth. Figure 3 illustrates the averaged NME and the bit-rate of JPEG compression and our method. It can be clearly seen that our method achieves much fewer errors at the similar bit-rate compared to JPEG. Figure 4 further shows the cumulative error distribution, where more than 90% of the images reconstructed by the proposed method have tiny errors less than 5%, showing great robustness.
+				 </p>				 
 			<div id="images" style="text-align: center">
 				<img src="VCM-Face/figures/1.png" alt="" width="80%" >		
 				<P style="text-align: left">Figure 3. Illustration of the averaged normalized point-to-point error (NME) on facial landmark detection and bit-rate of JPEG compression and the proposed method.</P>	
@@ -85,6 +91,13 @@
 			</div>					
 		</div>
 
+		<div class="reference_sec">
+		<h2>Reference</h2>
+		  <div class="bib">
+		    <p>[1] A. Bulat and G. Tzimiropoulos. How far are we from solving the 2d & 3d face alignment problem?(and a dataset of 230,000
+3d facial landmarks). ICCV, 2017.</p>
+		  </div>
+	</div>
 		
 		<br></br> 
 	<p class="banner"align="center">Last update: January 2020</p>
