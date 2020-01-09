@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="language" content="english">
+<title>Video Coding for Machine</title>
+<meta name="description" content="Text Effects Transfer">
+<meta name="author" content="Shuai Yang">
+<link rel="icon" type="image/x-icon" href="http://www.icst.pku.edu.cn/favicon.ico">
+<link rel="stylesheet" type="text/css" href="VCM-Face/css/project.css">
+</head>
+	<script> 
+	function coming_soon()
+	{
+		alert("We are cleaning up our code to make it more simple and readable");
+	}
+	</script> 
+
+<body>
+<div id="main">
+  
+	<div class="content"><br>
+		<div class="title">
+			<h1>Towards Coding for Human and Machine Vision: A Scalable Image Coding Approach</h1>
+		</div>
+		<div class="authors">
+			<div class='author'>
+				 <A href="mailto:huyy@pku.edu.cn" style="text-decoration: none">Yueyu Hu</A>
+		    </div>
+			<div class='author'>
+				 <A href="mailto:williamyang@pku.edu.cn" style="text-decoration: none">Shuai Yang</A>
+		    </div>
+			<div class='author'>
+				 <A href="mailto:yangwenhan@pku.edu.cn" style="text-decoration: none">Wenhan Yang</A>
+			</div>		
+			<div class='author'>
+				 <A href="mailto:lingyu@pku.edu.cn" style="text-decoration: none">Ling-Yu Duan</A>
+			</div>				
+			<div class='author'>
+				 <A href="mailto:liujiaying@pku.edu.cn" style="text-decoration: none">Jiaying Liu</A>
+			</div>		
+		</div>
+		<br>
+		<div class="overview sec">
+			<div class="picture_wrapper">
+		  		<img src='VCM-Face/figures/example.png' width='100%' alt="Teaser" >
+		  		<p style="text-align: center">Figure 1. Visual comparison with JPEG compression.</p>
+	  		</div>
+	  	</div>
+
+		<div class="abstract_sec">
+			<h2>Abstract</h2>
+			<div class='desp'>
+				<p style="text-align:justify">
+				 The past decades have witnessed the rapid development of image and video coding techniques in the era of big data. However, the signal fidelity-driven coding pipeline design limits the capability of the existing image/video coding frameworks to fulfill the needs of both machine and human vision. In this paper, we come up with a novel image coding framework by leveraging both the compressive and the generative models, to support machine vision and human perception tasks jointly. Given an input image, the feature analysis is first applied, and then the generative model is employed to perform image reconstruction with features and additional reference pixels, in which compact edge maps are extracted in this work to connect both kinds of vision in a scalable way. The compact edge map serves as the basic layer for machine vision tasks, and the reference pixels act as a sort of enhanced layer to guarantee signal fidelity for human vision. By introducing advanced generative models, we train a flexible network to reconstruct images from compact feature representations and the reference pixels. Experimental results demonstrate the superiority of our framework in both human visual quality and facial landmark detection, which provide useful evidence on the emerging standardization efforts on MPEG VCM (Video Coding for Machine).
+				 </p>
+			</div>
+		</div>
+
+		<div class="abstract_sec">
+			<h2>Framework</h2>
+			<div class="images">
+		  		<img src='VCM-Face/figures/framework.png' width='100%' alt="Teaser" >
+		  		<p style="text-align: center">Figure 2. Overview of the proposed vision-driven image coding framework.</p>
+	  		</div>
+	  	</div>	
+
+
+		<div class="download_sec">
+			<h2>Resources</h2>
+			<div>
+				<li><strong>Paper</strong>: <a href="#">arXiv</a></li>
+				<li><strong>Code</strong>: <a href="#">Coming soon</a></li>
+				<li><strong>Supplementary Material</strong>: <a href="VCM-Face/files/VCM-Face-supp.pdf">pdf</a></li>
+			</div>
+		</div>
+
+
+		<div class="experiments_sec">
+			<h2>Selected Results</h2>
+			<div id="images" style="text-align: center">
+				<img src="VCM-Face/figures/1.png" alt="" width="80%" >		
+				<P style="text-align: left">Figure 3. Illustration of the averaged normalized point-to-point error (NME) on facial landmark detection and bit-rate of JPEG compression and the proposed method.</P>	
+			</div>				
+			<div id="images" style="text-align: center">
+				<img src="VCM-Face/figures/pltCED.png" alt="" width="80%" >		
+				<P style="text-align: center">Figure 4. Cumulative error distribution of JPEG compression and the proposed method on facial landmark detection.</P>	
+			</div>					
+		</div>
+
+		
+		<br></br> 
+	<p class="banner"align="center">Last update: January 2020</p>
+  </div>
+</div>
+</body>
+</html>
