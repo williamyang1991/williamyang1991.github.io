@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="language" content="english">
+<title>Video Coding for Machine</title>
+<meta name="description" content="VCM">
+<meta name="author" content="Shuai Yang">
+<link rel="icon" type="image/x-icon" href="http://www.icst.pku.edu.cn/favicon.ico">
+<link rel="stylesheet" type="text/css" href="VCM-TMM/css/project.css">
+</head>
+	<script> 
+	function coming_soon()
+	{
+		alert("We are cleaning up our code to make it more simple and readable");
+	}
+	</script> 
+
+<body>
+<div id="main">
+  
+	<div class="content"><br>
+		<div class="title">
+			<h1>Towards Coding for Human and Machine Vision: Vision-Driven Scalable Image Coding</h1>
+		</div>
+		<div class="authors">
+			<div class='author'>
+				 <A href="mailto:williamyang@pku.edu.cn" style="text-decoration: none">Shuai Yang</A>
+		    </div>			
+			<div class='author'>
+				 <A href="mailto:huyy@pku.edu.cn" style="text-decoration: none">Yueyu Hu</A>
+		    </div>
+			<div class='author'>
+				 <A href="mailto:yangwenhan@pku.edu.cn" style="text-decoration: none">Wenhan Yang</A>
+			</div>		
+			<div class='author'>
+				 <A href="mailto:lingyu@pku.edu.cn" style="text-decoration: none">Ling-Yu Duan</A>
+			</div>				
+			<div class='author'>
+				 <A href="mailto:liujiaying@pku.edu.cn" style="text-decoration: none">Jiaying Liu</A>
+			</div>		
+		</div>
+		<br>
+		<div class="overview sec">
+			<div class="picture_wrapper">
+		  		<img src='VCM-TMM/figures/scalablecoding.jpg' width='100%' alt="Teaser" >
+		  		<p style="text-align: justify">Figure 1. We address image compression for joint human and machine vision in one framework. The proposed framework achieves high performance on both human and machine vision tasks under a tight constraint on the bit-rate.
+				</p>
+	  		</div>
+	  	</div>
+
+		<div class="abstract_sec">
+			<h2>Abstract</h2>
+			<div class='desp'>
+				<p style="text-align:justify">
+				 The past decades have witnessed the rapid development of image and video coding techniques in the era of big data. However, the signal fidelity-driven coding pipeline design limits the capability of the existing image/video coding frameworks to fulfill the needs of both machine and human vision. In this paper, we come up with a novel image coding framework by leveraging both the compressive and the generative models, to support machine vision and human perception tasks jointly. Given an input image, the feature analysis is first applied, and then the generative model is employed to perform image reconstruction with features and additional reference pixels, in which compact edge maps are extracted in this work to connect both kinds of vision in a scalable way. A key reference pixel selection method is proposed to suggest the priorities of the reference pixels for scalable coding. The compact edge map serves as the basic layer for machine vision tasks, and the reference pixels act as a sort of enhanced layer to guarantee signal fidelity for human vision. By introducing advanced generative models, we train a decoding network to reconstruct images from compact feature representations and the reference pixels, which is flexible to accept scalable inputs and to control the imagery effect of the outputs between fidelity and realism. Experimental results and comprehensive performance analysis demonstrate the superiority of our framework in both human vision tasks and machine vision tasks, which provide useful evidence on the emerging standardization efforts on MPEG VCM (Video Coding for Machine).
+				 </p>
+			</div>
+		</div>
+
+		<div class="abstract_sec">
+			<h2>Framework</h2>
+			<div class="images">
+		  		<img src='VCM-TMM/figures/framework.png' width='100%' alt="Teaser" >
+		  		<p style="text-align: center">Figure 2. Overview of the proposed vision-driven image coding framework.</p>
+	  		</div>
+	  	</div>	
+
+
+		<div class="download_sec">
+			<h2>Resources</h2>
+			<div>
+				<li><strong>Conference version (ICME2020 best paper)</strong>: <a href="#">arXiv</a></li>
+			</div>
+		</div>
+
+
+		<div class="experiments_sec">		
+			<h2>Selected Results</h2>
+				<div id="images" style="text-align: center">
+			  		<p style="text-align: center">Table 1. Quantitative comparison with JPEG on both human vision task and machine vision task.</p>					
+			  		<img src='VCM-TMM/figures/results.png' width='80%' alt="" >
+				</div>					
+				<p style="text-align:justify">
+				 <b>Human Vision: Visual Quality and Fidelity.</b> In Figure 3, we present a visual comparison of the proposed method with JPEG compression under different quality parameters (qp), which are selected to matches the bit-rate of our method for fair comparison. It can be observed that JPEG compression yields distinct block artifacts, which greatly decrease visual quality. By comparison, our method produces more natural results. In Table 1, we report the SSIM (for realism) and FID (for fidelity) between the reconstructed images and the ground truth. Our method outperforms JPEG compression in the two metrics.
+				 </p>
+				<div id="images" style="text-align: center">
+			  		<img src='VCM-TMM/figures/example2.jpg' width='100%' alt="" >
+			  		<img src='VCM-TMM/figures/example1.jpg' width='100%' alt="" >
+			  		<img src='VCM-TMM/figures/example3.jpg' width='100%' alt="" >
+			  		<img src='VCM-TMM/figures/example4.jpg' width='100%' alt="" >
+			  		<img src='VCM-TMM/figures/example5.jpg' width='100%' alt="" >
+			  		<img src='VCM-TMM/figures/example6.jpg' width='100%' alt="" >
+			  		<img src='VCM-TMM/figures/example7.jpg' width='100%' alt="" >
+			  		<p style="text-align: justify">Figure 3. Visual comparison with JPEG compression. (a) Input image. (b)-(c) Images compressed by JPEG using quality parameter of 4, and 6, respectively. (d) Our decoded images using the encoded edge representations. (e)(f) Our decoded images using both the encoded edge representation and color representation under N=15 and N=122, respectively. For each reconstructed image, its bit-rate (bit per pixel, bpp) is shown in the lower left black box.</p>
+				</div>					 		
+				 <p style="text-align:justify">
+				 <b>Machine Vision: Landmark Detection and Gender Classification.</b> The machine vision performance is tested on the high-level facial landmark detection and gender classification tasks. We perform facial landmark detection [1] and gender classification [2] on the original VGGFace2 dataset [3] and the reconstructed dataset by JPEG and our method. Results on the original data are served as ground truth. Figure 4 visualizes the results. 
+				 In Table 1, we report the normalized point-to-point error (NME) between the detection results on the compressed data and the ground truth, and the gender classification accuracy. Our method outperforms JPEG compression in the two tasks.
+				 </p>				 
+				<div id="images" style="text-align: center">
+			  		<img src='VCM-TMM/figures/lm2.jpg' width='100%' alt="" >
+			  		<img src='VCM-TMM/figures/lm1.jpg' width='100%' alt="" >
+			  		<img src='VCM-TMM/figures/lm3.jpg' width='100%' alt="" >
+			  		<img src='VCM-TMM/figures/lm4.jpg' width='100%' alt="" >
+			  		<img src='VCM-TMM/figures/lm5.jpg' width='100%' alt="" >
+			  		<img src='VCM-TMM/figures/lm6.jpg' width='100%' alt="" >
+			  		<img src='VCM-TMM/figures/lm7.jpg' width='100%' alt="" >
+			  		<p style="text-align: justify">Figure 4. Comparison with JPEG compression on landmark detection and gender classification. (a) Input image. (b)-(c) Results by JPEG using quality parameter of 4, and 6, respectively. (d) Our results using the encoded edge representations. (e)(f) Our results using both the encoded edge representation and color representation under N=15 and N=122, respectively. For each reconstructed image, its bit-rate (bit per pixel, bpp) is shown in the lower left black box, its classified gender is shown in the lower right black box. The detected landmarks are shown as white circles.</p>
+				</div>				
+		</div>
+
+		<div class="reference_sec">
+		<h2>Reference</h2>
+		  <div class="bib">
+		    <p>[1] A. Bulat and G. Tzimiropoulos. How far are we from solving the 2d & 3d face alignment problem?(and a dataset of 230,000
+3d facial landmarks). ICCV, 2017.</p>
+			<p>[2] S. I. Serengil and A. Ozpinar, Lightface: A hybrid deep face recognition
+framework. IEEE INISTA, 2020.</p>
+			<p>[3] Q. Cao, L. Shen, W. Xie, O. M. Parkhi, and A. Zisserman, Vggface2:
+A dataset for recognising faces across pose and age. IEEE FG 2018.</p>
+		  </div>
+	</div>
+		
+		<br></br> 
+	<p class="banner"align="center"></p>
+  </div>
+</div>
+</body>
+</html>
