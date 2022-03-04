@@ -6,18 +6,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>Project - Shuai Yang</title>
-		<link href="./css/bootstrap.css" rel="stylesheet" type="text/css"  media="all" />
-		<link href="./css/style.css" rel="stylesheet" type="text/css"  media="all" />
-		<link href="./css/prettyPhoto.css" rel="stylesheet" type="text/css"  media="all" />	
-		<link href="./css/project.css" rel="stylesheet" type="text/css"  media="all" />			
-		<link href='http://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>	
-	</head>
-	<body>
-		<!---start-wrap--->
-		<!---start-header--->
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Project - Shuai Yang</title>
+	<link href="./css/bootstrap.css" rel="stylesheet" type="text/css"  media="all" />
+	<link href="./css/style.css" rel="stylesheet" type="text/css"  media="all" />
+	<link href="./css/prettyPhoto.css" rel="stylesheet" type="text/css"  media="all" />	
+	<link href="./css/project.css" rel="stylesheet" type="text/css"  media="all" />			
+	<link href='http://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>	
+</head>
+<body>
+	<!---start-wrap--->
+	<!---start-header--->
 	<div class="header">
 		<div class="wrap">
 			<!---start-logo--->
@@ -30,13 +30,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<ul>
 					<li onclick="func('Research')" class="dropdown" >
 						<a id="Research" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" >
-						  Research Projects <span class="caret"></span>
+							Research Projects <span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu bullet fadeIn" role="menu">
-						  <li id="dropdown-a"><a href="#research1"  class="scroll">Image Stylization</a></li>
-						  <li id="dropdown-a"><a href="#research2"  class="scroll">Image Completion</a></li>
-						  <li id="dropdown-a"><a href="#research3"  class="scroll">Depth Enhancement</a></li>
-						  <li id="dropdown-a"><a href="#research4"  class="scroll">Other Projects</a></li>
+							<li id="dropdown-a"><a href="#research1"  class="scroll">Text Stylization</a></li>
+							<li id="dropdown-a"><a href="#research2"  class="scroll">Human-Oriented Editing</a></li>
+							<li id="dropdown-a"><a href="#research3"  class="scroll">Image Translation</a></li>
+							<li id="dropdown-a"><a href="#research4"  class="scroll">Other Projects</a></li>
 						</ul>
 					</li>					
 					<li id="Course" onclick="func('Course')"><a href="#course" class="scroll">Course Projects</a></li>
@@ -44,39 +44,39 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</div>
 			<div class="clear"> </div>
 			<!---End-top-nav--->
-	     </div>
+		</div>
 	</div>
 	
 	<script> 
-	var lastname = 'Research';
-	function func(name){
-		if (lastname == name){
-			return;
+		var lastname = 'Research';
+		function func(name){
+			if (lastname == name){
+				return;
+			}
+			if(name == 'Course'){
+				var div = document.getElementById(name); 
+				div.className = 'active';
+				div = document.getElementById(lastname); 
+				div.style.borderTop="0px";
+				div.style.color="#ffffff";
+				lastname = name;
+			}
+			else
+			{
+				var div = document.getElementById(name); 
+				div.style.borderTop="5px solid #4dc9b0";
+				div.style.color="#4dc9b0";
+				div = document.getElementById(lastname); 
+				if (lastname == 'Course'){
+					div.className = ''; 				
+				}			
+				lastname = name;
+			}
 		}
-		if(name == 'Course'){
-			var div = document.getElementById(name); 
-			div.className = 'active';
-			div = document.getElementById(lastname); 
-			div.style.borderTop="0px";
-			div.style.color="#ffffff";
-			lastname = name;
-		}
-		else
+		function coming_soon()
 		{
-			var div = document.getElementById(name); 
-			div.style.borderTop="5px solid #4dc9b0";
-			div.style.color="#4dc9b0";
-			div = document.getElementById(lastname); 
-			if (lastname == 'Course'){
-				div.className = ''; 				
-			}			
-			lastname = name;
+			alert("Coming soon.");
 		}
-	}
-	function coming_soon()
-	{
-		alert("Coming soon.");
-	}
 	</script> 
 	
 	<!---End-wrap--->
@@ -85,380 +85,385 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<h3>Research Projects</h3>
 			<p></p>
 		</div>
+
 		<div class="grid3" id="research1">
 			<div class="grid3-header">
-				<img src="./images/3991-200.png" title="Artdirector" />
-				<p>Image Stylization</p>
+				<img src="./images/text.png" title="Artdirector" />
+				<p>Text Stylization</p>
 			</div>
 			<div class="grid3-content">
 				<div class="well well-lg">
-					<div class="name">
-						<p><b>Controllable Artistic Text Style Transfer via Shape-Matching GAN</b></p>
-						<small>ICCV 2019<br/>Shuai Yang, Zhangyang Wang, Zhaowen Wang, Ning Xu, Jiaying Liu, Zongming Guo.</small>
-					</div>
-					<div class="info">
-						<img src="images/project/ICCV2019.jpg"></img>
-						<p>This work presents a novel style transfer framework for rendering artistic text from a source style image in a scale-controllable manner. It allows users to adjust the stylistic degree of the glyph (i.e. deformation degree) in a continuous and real-time way, and therefore to select the artistic text that is most ideal for both legibility and style consistency.</p>
-					</div>
-					<div class="buttons">
-						<a class="btn btn-confirm" target="_blank" href="https://arxiv.org/abs/1905.01354">pdf</a>
-						<a class="btn btn-confirm" target="_blank" href="https://williamyang1991.github.io/projects/ICCV2019/SMGAN.html">project</a>
-						<a class="btn btn-confirm" target="_blank" href="https://github.com/TAMU-VITA/ShapeMatchingGAN">code</a>
-						<button type="button" class="btn btn-confirm"
-						  data-container="body" data-toggle="popover"  data-html="true" data-placement="bottom" 
-						  data-content="<div>@article{yang2019controllable,<br/>
-						  &nbsp;&nbsp;&nbsp;title={Controllable Artistic Text Style Transfer via Shape-Matching GAN},<br/>
-						  &nbsp;&nbsp;&nbsp;author={Yang, Shuai and Wang, Zhangyang and Wang, Zhaowen and Xu, Ning and Liu, Jiaying and Guo, Zongming},<br/>
-						  &nbsp;&nbsp;&nbsp;booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},<br/>
-						  &nbsp;&nbsp;&nbsp;pages={4442--4451},<br/>
-						  &nbsp;&nbsp;&nbsp;year={2019}<br/>
-						}</div>">cite									
-					</div>	<hr/>							
-					<div class="name">						
-						<p><b>Shape-Matching GAN++: Scale Controllable Dynamic Artistic Text Style Transfer</b></p>
-						<small>TPAMI 2021<br/>Shuai Yang, Zhangyang Wang and Jiaying Liu.</small>
-					</div>
-					<div class="info"></div>
-					<div class="info" id="ICCV2019-more" style="display:none">
-						<img src="images/project/TPAMI2021.jpg"></img>
-						<p>In this journal version, we expand our model to dynamic text style transfer by establishing spatial-temporal structural mappings within consecutive frames. Our improved model can animate a static text image based on a reference style video, which is less explored in video style transfer, but is of great application value in digital graphic design such as website design and gif generation.</p>
+					<div class="collection-name">
+						<p><b>GAN-based Text Stylization</b></p>
 					</div>					
-					<div class="buttons">
-						<button type="button" class="btn btn-confirm"
-						  data-container="body" data-toggle="popover"  data-html="true" data-placement="bottom" 
-						  data-content="<div>@article{yang2021shape,<br/>
-						  &nbsp;&nbsp;&nbsp;title={Shape-Matching GAN++: Scale Controllable Dynamic Artistic Text Style Transfer},<br/>
-						  &nbsp;&nbsp;&nbsp;author={Yang, Shuai and Wang, Zhangyang and Liu, Jiaying},<br/>
-						  &nbsp;&nbsp;&nbsp;journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},<br/>
-						  &nbsp;&nbsp;&nbsp;year={2021}<br/>
-						}</div>">cite
-						</button>	
-						<button type="button" id="ICCV2019-more-button" class="btn btn-confirm" onClick="$use('ICCV2019-more','ICCV2019-more-button')">unfold</button>						
-					</div>									
+					<div class='row publication-entity'>
+						<div class='col-xs-4'>
+							<img class="paper-image" src="images/publication/SMGAN.gif">
+						</div>
+						<div class='col-xs-8'>
+							<div class='paper-title'>Controllable Artistic Text Style Transfer via Shape-Matching GAN</div>
+							<div class='paper-venue'>ICCV 2019</div>
+							<div class='paper-authors'>Shuai Yang, Zhangyang Wang, Zhaowen Wang, Ning Xu, Jiaying Liu, Zongming Guo</div>
+							<div class="buttons">
+								<a class="btn btn-confirm" target="_blank" href="https://arxiv.org/abs/1905.01354">pdf</a>
+								<a class="btn btn-confirm" target="_blank" href="https://williamyang1991.github.io/projects/ICCV2019/SMGAN.html">project</a>
+								<a class="btn btn-confirm" target="_blank" href="https://github.com/TAMU-VITA/ShapeMatchingGAN">code</a>
+								<button type="button" id="ICCV2019-more-button" class="btn btn-confirm" onClick="$use('ICCV2019-more','ICCV2019-more-button')">unfold</button>	
+							</div><hr/>
+							<div class='paper-title'>Shape-Matching GAN++: Scale Controllable Dynamic Artistic Text Style Transfer</div>
+							<div class='paper-venue'>TPAMI 2021</div>
+							<div class='paper-authors'>Shuai Yang, Zhangyang Wang, Jiaying Liu</div>
+							<div class="buttons">
+								<a class="btn btn-confirm" target="_blank" href="#">pdf</a>
+								<button type="button" id="TPAMI2021-more-button" class="btn btn-confirm" onClick="$use('TPAMI2021-more','TPAMI2021-more-button')">unfold</button>	
+							</div>										
+						</div>	
+						<div class='col-xs-12'>
+							<div class="info" id="ICCV2019-more" style="display:none">
+								<img src="images/project/ICCV2019.jpg"></img>
+								This work presents a novel style transfer framework for rendering artistic text from a source style image in a scale-controllable manner. It allows users to adjust the stylistic degree of the glyph (i.e. deformation degree) in a continuous and real-time way, and therefore to select the artistic text that is most ideal for both legibility and style consistency.
+							</div>
+							<div class="info" id="TPAMI2021-more" style="display:none">
+								<img src="images/project/TPAMI2021.jpg"></img>
+								In this journal version, we expand our model to dynamic text style transfer by establishing spatial-temporal structural mappings within consecutive frames. Our improved model can animate a static text image based on a reference style video, which is less explored in video style transfer, but is of great application value in digital graphic design such as website design and gif generation.
+							</div>
+						</div>
+					</div>
+					<hr/>	
+					<div class='row publication-entity'>
+						<div class='col-xs-4'>
+							<img class="paper-image" src="images/publication/TETGAN.png">
+						</div>
+						<div class='col-xs-8'>
+							<div class='paper-title'>TET-GAN: Text Effects Transfer via Stylization and Destylization</div>
+							<div class='paper-venue'>AAAI 2019</div>
+							<div class='paper-authors'>Shuai Yang, Jiaying Liu, Wenjing Wang, Zongming Guo</div>
+							<div class="buttons">
+								<a class="btn btn-confirm" target="_blank" href="http://www.icst.pku.edu.cn/struct/Pub%20Files/2019/ys_aaai19.pdf">pdf</a>
+								<a class="btn btn-confirm" target="_blank" href="http://39.96.165.147/Projects/ys_aaai19/TETGAN.html">project</a>
+								<a class="btn btn-confirm" target="_blank" href="https://github.com/williamyang1991/TET-GAN">code</a>
+								<a class="btn btn-confirm" target="_blank" href="http://39.96.165.147/Projects/ys_aaai19/TETGAN.html">dataset</a>
+								<button type="button" id="AAAI2019-more-button" class="btn btn-confirm" onClick="$use('AAAI2019-more','AAAI2019-more-button')">unfold</button>	
+							</div><hr/>
+							<div class='paper-title'>TE141K: Artistic Text Benchmark for Text Effect Transfer</div>
+							<div class='paper-venue'>TPAMI 2020</div>
+							<div class='paper-authors'>Shuai Yang, Wenjing Wang, Jiaying Liu</div>
+							<div class="buttons">
+								<a class="btn btn-confirm" target="_blank" href="https://arxiv.org/abs/1905.03646">pdf</a>
+								<a class="btn btn-confirm" target="_blank" href="https://daooshee.github.io/TE141K/">project</a>
+								<a class="btn btn-confirm" target="_blank" href="https://daooshee.github.io/TE141K/">dataset</a>	
+								<button type="button" id="TPAMI2020-more-button" class="btn btn-confirm" onClick="$use('TPAMI2020-more','TPAMI2020-more-button')">unfold</button>	
+							</div>										
+						</div>	
+						<div class='col-xs-12'>
+							<div class="info" id="AAAI2019-more" style="display:none">
+								<img src="images/project/AAAI2019.jpg"></img>
+								This work presents a novel Texture Effects Transfer GAN (TET-GAN), which are trained to disentangle content and style features of text effects images to accomplish both the objective of style transfer and style removal. To support the training of our network, we propose a new text effects dataset with as much as 64 professionally designed styles on 837 characters.
+							</div>
+							<div class="info" id="TPAMI2020-more" style="display:none">
+								<img src="images/project/TPAMI2020.png"></img>
+								In this journal version, we focus on the construction and analysis of the new large-scale dataset TE141K with 141,081 content/style image pairs, and conducted more comprehensive experiments for model benchmarking. In addition, we expand our model to joint font style and text effect transfer and semisupervised text effect transfer
+							</div>
+						</div>
+					</div>	
+					<hr/>	
+					<div class='row publication-entity'>
+						<div class='col-xs-4'>
+							<img class="paper-image" src="images/publication/DECOTET.png">
+						</div>
+						<div class='col-xs-8'>
+							<div class='paper-title'>Typography with Decor: Intelligent Text Style Transfer</div>
+							<div class='paper-venue'>CVPR 2019</div>
+							<div class='paper-authors'>Wenjing Wang, Jiaying Liu, Shuai Yang, Zongming Guo</div>
+							<div class="buttons">
+								<a class="btn btn-confirm" target="_blank" href="https://github.com/daooshee/Typography2019/blob/master/3159.pdf">pdf</a>
+								<a class="btn btn-confirm" target="_blank" href="https://daooshee.github.io/Typography2019/">project</a>
+								<a class="btn btn-confirm" target="_blank" href="https://github.com/daooshee/Typography-with-Decor">code</a>
+								<a class="btn btn-confirm" target="_blank" href="https://drive.google.com/drive/u/1/folders/1eNYlxpGY7bU8nd36rlu12gkRTGSjxtKu">dataset</a>	
+							</div>								
+						</div>	
+					</div>								
 				</div>
+
 				<div class="well well-lg">
-					<div class="name">
-						<p><b>TET-GAN: Text Effects Transfer via Stylization and Destylization</b></p>
-						<small>AAAI 2019<br/>Shuai Yang, Jiaying Liu, Wenjing Wang and Zongming Guo.</small>
-					</div>
-					<div class="info">
-						<img src="images/project/AAAI2019.jpg"></img>
-						<p>This work presents a novel Texture Effects Transfer GAN (TET-GAN), which are trained to disentangle content and style features of text effects images to accomplish both the objective of style transfer and style removal. To support the training of our network, we propose a new text effects dataset with as much as 64 professionally designed styles on 837 characters.</p>
-					</div>
-					<div class="buttons">
-						<a class="btn btn-confirm" target="_blank" href="http://www.icst.pku.edu.cn/struct/Pub%20Files/2019/ys_aaai19.pdf">pdf</a>
-						<a class="btn btn-confirm" target="_blank" href="http://39.96.165.147/Projects/ys_aaai19/TETGAN.html">project</a>
-						<a class="btn btn-confirm" target="_blank" href="https://github.com/williamyang1991/TET-GAN">code</a>
-						<a class="btn btn-confirm" target="_blank" href="http://39.96.165.147/Projects/ys_aaai19/TETGAN.html">dataset</a>
-						<button type="button" class="btn btn-confirm"
-						  data-container="body" data-toggle="popover"  data-html="true" data-placement="bottom" 
-						  data-content="<div>@article{yang2018tet,<br/>
-						  &nbsp;&nbsp;&nbsp;title={TET-GAN: Text Effects Transfer via Stylization and Destylization},<br/>
-						  &nbsp;&nbsp;&nbsp;author={Yang, Shuai and Liu, Jiaying and Wang, Wenjing and Guo, Zongming},<br/>
-						  &nbsp;&nbsp;&nbsp;booktitle={AAAI Conference on Artificial Intelligence},<br/>
-						  &nbsp;&nbsp;&nbsp;year={2019}<br/>
-						}</div>">cite									
-					</div>		<hr/>							
-					<div class="name">						
-						<p><b>TE141K: Artistic Text Benchmark for Text Effect Transfer</b></p>
-						<small>TPAMI 2020<br/>Shuai Yang, Wenjing Wang and Jiaying Liu.</small>
-					</div>
-					<div class="info"></div>
-					<div class="info" id="AAAI2019-more" style="display:none">
-						<img src="images/project/TPAMI2020.png"></img>
-						<p>In this journal version, we focus on the construction and analysis of the new large-scale dataset TE141K with 141,081 content/style image pairs, and conducted more comprehensive experiments for model benchmarking. In addition, we expand our model to joint font style and text effect transfer and semisupervised text effect transfer</p>
+					<div class="collection-name">
+						<p><b>Patch-Match-based Text Stylization</b></p>
 					</div>					
-					<div class="buttons">
-						<a class="btn btn-confirm" target="_blank" href="https://arxiv.org/abs/1905.03646">pdf</a>
-						<a class="btn btn-confirm" target="_blank" href="https://daooshee.github.io/TE141K/">project</a>
-						<a class="btn btn-confirm" target="_blank" href="https://daooshee.github.io/TE141K/">dataset</a>
-						<button type="button" class="btn btn-confirm"
-						  data-container="body" data-toggle="popover"  data-html="true" data-placement="bottom" 
-						  data-content="<div>@article{yang2020te141k,<br/>
-						  &nbsp;&nbsp;&nbsp;title={TE141K: Artistic Text Benchmark for Text Effect Transfer},<br/>
-						  &nbsp;&nbsp;&nbsp;author={Yang, Shuai and Wang, Wenjing and Liu, Jiaying},<br/>
-						  &nbsp;&nbsp;&nbsp;journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},<br/>
-						  &nbsp;&nbsp;&nbsp;year={2020}<br/>
-						}</div>">cite
-						</button>	
-						<button type="button" id="AAAI2019-more-button" class="btn btn-confirm" onClick="$use('AAAI2019-more','AAAI2019-more-button')">unfold</button>						
-					</div>						
-				</div>	
-			    <div class="well well-lg">
-					<div class="name">
-						<p><b>Context-Aware Unsupervised Text Stylization</b></p>
-						<small>ACM MM 2018<br/>Shuai Yang, Jiaying Liu, Wenhan Yang and Zongming Guo.</small>
+					<div class='row publication-entity'>
+						<div class='col-xs-4'>
+							<img class="paper-image" src="images/publication/UTS.png">
+						</div>
+						<div class='col-xs-8'>
+							<div class='paper-title'>Context-Aware Unsupervised Text Stylization</div>
+							<div class='paper-venue'>ACM MM 2018</div>
+							<div class='paper-authors'>Shuai Yang, Jiaying Liu, Wenhan Yang, Zongming Guo</div>
+							<div class="buttons">
+								<a class="btn btn-confirm" target="_blank" href="http://www.icst.pku.edu.cn/struct/Pub%20Files/2018/yang-mm18.pdf">pdf</a>
+								<a class="btn btn-confirm" target="_blank" href="http://www.icst.pku.edu.cn/struct/Projects/UTS.html">project</a>
+								<button type="button" id="MM2018-more-button" class="btn btn-confirm" onClick="$use('MM2018-more','MM2018-more-button')">unfold</button>	
+							</div><hr/>
+							<div class='paper-title'>Context-Aware Text-Based Binary Image Stylization and Synthesis</div>
+							<div class='paper-venue'>TIP 2019</div>
+							<div class='paper-authors'>Shuai Yang, Jiaying Liu, Wenhan Yang, Zongming Guo</div>
+							<div class="buttons">
+								<a class="btn btn-confirm" target="_blank" href="#">pdf</a>
+								<button type="button" id="TIP2019-more-button" class="btn btn-confirm" onClick="$use('TIP2019-more','TIP2019-more-button')">unfold</button>	
+							</div>										
+						</div>	
+						<div class='col-xs-12'>
+							<div class="info" id="MM2018-more" style="display:none">
+								<img src="images/project/ACMMM2018.png"></img>
+								This work explores a challenging unsupervised text stylization problem, only with a text image and an arbitrary style image as input. Furthermore, we investigate the combination of stylized shapes (text, symbols, icons) and background images to create professional looking artwork.
+							</div>
+							<div class="info" id="TIP2019-more" style="display:none">
+								<img src="images/project/TIP2019.jpg"></img>
+								In this journal version, we further consider the rotations and scales of text, investigate the placement of each individual character rather than considering them as a whole to enhance the design flexibility, the computational complexity, and extend our method to structure-guided image inpainting.
+							</div>
+						</div>
+					</div><hr/>	
+
+					<div class='row publication-entity'>
+						<div class='col-xs-4'>
+							<img class="paper-image" src="images/publication/TET.png">
+						</div>
+						<div class='col-xs-8'>
+							<div class='paper-title'>Awesome Typography: Statistics-Based Text Effects Transfer</div>
+							<div class='paper-venue'>CVPR 2017</div>
+							<div class='paper-authors'>Shuai Yang, Jiaying Liu, Zhouhui Lian, Zongming Guo</div>
+							<div class="buttons">
+								<a class="btn btn-confirm" target="_blank" href="http://www.icst.pku.edu.cn/struct/Pub%20Files/2017/ys_cvpr17.pdf">pdf</a>
+								<a class="btn btn-confirm" target="_blank" href="http://www.icst.pku.edu.cn/struct/Projects/TET.html">project</a>
+								<a class="btn btn-confirm" target="_blank" href="https://github.com/williamyang1991/Text-Effects-Transfer/tree/release">code</a>	
+								<button type="button" id="CVPR2017-more-button" class="btn btn-confirm" onClick="$use('CVPR2017-more','CVPR2017-more-button')">unfold</button>	
+							</div><hr/>
+							<div class='paper-title'>Text Effects Transfer via Distribution-Aware Texture Synthesis</div>
+							<div class='paper-venue'>CVIU 2018</div>
+							<div class='paper-authors'>Shuai Yang, Jiaying Liu, Zhouhui Lian, Zongming Guo</div>
+							<div class="buttons">
+								<a class="btn btn-confirm" target="_blank" href="http://www.icst.pku.edu.cn/struct/Pub%20Files/2018/ys-cviu18.pdf">pdf</a>
+								<button type="button" id="CVIU2018-more-button" class="btn btn-confirm" onClick="$use('CVIU2018-more','CVIU2018-more-button')">unfold</button>	
+							</div>										
+						</div>	
+						<div class='col-xs-12'>
+							<div class="info" id="CVPR2017-more" style="display:none">
+								<img src="images/project/CVPR2017.png"></img>
+								This work explores the problem of generating fantastic special-effects for the typography. Our key idea is to exploit the analytics on the high regularity of the texture spatial distribution for text effects to guide the synthesis process.
+							</div>
+							<div class="info" id="CVIU2018-more" style="display:none">
+								<img src="images/project/CVIU2018.jpg"></img>
+								In this journal version, we introduce a new stroke term to adjust the texture similarity of matched strokes, conduct a user study and a running time comparison for quantitative evaluations, and apply our method to more general stroke-based graphics.
+							</div>
+						</div>
 					</div>
-					<div class="info">
-						<img src="images/project/ACMMM2018.png"></img>
-						<p>This work explores a challenging unsupervised text stylization problem, only with a text image and an arbitrary style image as input. Furthermore, we investigate the combination of stylized shapes (text, symbols, icons) and background images to create professional looking artwork.</p>
-					</div>
-					<div class="buttons">
-						<a class="btn btn-confirm" target="_blank" href="http://www.icst.pku.edu.cn/struct/Pub%20Files/2018/yang-mm18.pdf">pdf</a>
-						<a class="btn btn-confirm" target="_blank" href="http://www.icst.pku.edu.cn/struct/Projects/UTS.html">project</a>
-						<button type="button" class="btn btn-confirm"
-						  data-container="body" data-toggle="popover"  data-html="true" data-placement="bottom" 
-						  data-content="<div>@inproceedings{yang2018context,<br/>
-						  &nbsp;&nbsp;&nbsp;title={Context-Aware Unsupervised Text Stylization},<br/>
-						  &nbsp;&nbsp;&nbsp;author={Yang, Shuai and Liu, Jiaying and Lian, Zhouhui and Guo, Zongming},<br/>
-						  &nbsp;&nbsp;&nbsp;booktitle={ACM Multimedia Conference},<br/>
-						  &nbsp;&nbsp;&nbsp;pages={1688--1696},<br/>
-						  &nbsp;&nbsp;&nbsp;year={2018}<br/>
-						}</div>">cite									
-					</div>	<hr/>							
-					<div class="name">						
-						<p><b>Context-Aware Text-Based Binary Image Stylization and Synthesis</b></p>
-						<small>TIP 2018<br/>Shuai Yang, Jiaying Liu, Wenhan Yang and Zongming Guo.</small>
-					</div>
-					<div class="info"></div>
-					<div class="info" id="ACMMM2018-more" style="display:none">
-						<img src="images/project/TIP2019.jpg"></img>
-						<p>In this journal version, we further consider the rotations and scales of text, investigate the placement of each individual character rather than considering them as a whole to enhance the design flexibility, the computational complexity, and extend our method to structure-guided image inpainting.</p>
-					</div>					
-					<div class="buttons">
-						<a class="btn btn-confirm" target="_blank" href="http://www.icst.pku.edu.cn/struct/Pub%20Files/2019/ys_tip19.pdf">pdf</a>
-						<button type="button" class="btn btn-confirm"
-						  data-container="body" data-toggle="popover"  data-html="true" data-placement="bottom" 
-						  data-content="<div>@article{yang2019context,<br/>
-						  &nbsp;&nbsp;&nbsp;title={Context-Aware Text-Based Binary Image Stylization and Synthesis},<br/>
-						  &nbsp;&nbsp;&nbsp;author={Yang, Shuai and Liu, Jiaying and Yang, Wenhan and Guo, Zongming},<br/>
-						  &nbsp;&nbsp;&nbsp;journal={IEEE Transactions on Image Processing},<br/>
-						  &nbsp;&nbsp;&nbsp;volume={28},<br/>
-						  &nbsp;&nbsp;&nbsp;number={2},<br/>
-						  &nbsp;&nbsp;&nbsp;pages={952--964},<br/>
-						  &nbsp;&nbsp;&nbsp;year={2019}<br/>
-						}</div>">cite
-						</button>	
-						<button type="button" id="ACMMM2018-more-button" class="btn btn-confirm" onClick="$use('ACMMM2018-more','ACMMM2018-more-button')">unfold</button>						
-					</div>					
-				</div>			
-			    <div class="well well-lg">
-					<div class="name">
-						<p><b>Awesome Typography: Statistics-Based Text Effects Transfer</b></p>
-						<small>CVPR 2017<br/>Shuai Yang, Jiaying Liu, Zhouhui Lian and Zongming Guo.</small>
-					</div>
-					<div class="info">
-						<img src="images/project/CVPR2017.png"></img>
-						<p> This work explores the problem of generating fantastic special-effects for the typography.
-						 our key idea is to exploit the analytics on the high regularity of the texture spatial distribution for text effects to guide the synthesis process. </p>
-					</div>
-					<div class="buttons">
-						<a class="btn btn-confirm" target="_blank" href="http://www.icst.pku.edu.cn/struct/Pub%20Files/2017/ys_cvpr17.pdf">pdf</a>
-						<a class="btn btn-confirm" target="_blank" href="http://www.icst.pku.edu.cn/struct/Projects/TET.html">project</a>
-						<a class="btn btn-confirm" target="_blank" href="https://github.com/williamyang1991/Text-Effects-Transfer/tree/release">code</a>						<button type="button" class="btn btn-confirm"
-						  data-container="body" data-toggle="popover"  data-html="true" data-placement="bottom" 
-						  data-content="<div>@inproceedings{yang2017awesome,<br/>
-						  &nbsp;&nbsp;&nbsp;title={Awesome typography: Statistics-based text effects transfer},<br/>
-						  &nbsp;&nbsp;&nbsp;author={Yang, Shuai and Liu, Jiaying and Lian, Zhouhui and Guo, Zongming},<br/>
-						  &nbsp;&nbsp;&nbsp;booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},<br/>
-						  &nbsp;&nbsp;&nbsp;pages={7464--7473},<br/>
-						  &nbsp;&nbsp;&nbsp;year={2017}<br/>
-						}</div>">cite									
-					</div>	<hr/>							
-					<div class="name">						
-						<p><b>Text Effects Transfer via Distribution-Aware Texture Synthesis</b></p>
-						<small>CVIU 2018<br/>Shuai Yang, Jiaying Liu, Zhouhui Lian and Zongming Guo.</small>
-					</div>
-					<div class="info"></div>
-					<div class="info" id="CVIU2018-more" style="display:none">
-						<img src="images/project/CVIU2018.jpg"></img>
-						<p>In this journal version, we introduce a new stroke term to adjust the texture similarity of matched strokes, conduct a user study and a running time comparison for quantitative evaluations, and apply our method to more general stroke-based graphics.</p>
-					</div>					
-					<div class="buttons">
-						<a class="btn btn-confirm" target="_blank" href="http://www.icst.pku.edu.cn/struct/Pub%20Files/2018/ys-cviu18.pdf">pdf</a>
-						<button type="button" class="btn btn-confirm"
-						  data-container="body" data-toggle="popover"  data-html="true" data-placement="bottom" 
-						  data-content="<div>@article{yang2018text,<br/>
-						  &nbsp;&nbsp;&nbsp;title={Text effects transfer via distribution-aware texture synthesis},<br/>
-						  &nbsp;&nbsp;&nbsp;author={Yang, Shuai and Liu, Jiaying and Lian, Zhouhui and Guo, Zongming},<br/>
-						  &nbsp;&nbsp;&nbsp;journal={Computer Vision and Image Understanding},<br/>
-						  &nbsp;&nbsp;&nbsp;volume={174},<br/>
-						  &nbsp;&nbsp;&nbsp;pages={43--56},<br/>
-						  &nbsp;&nbsp;&nbsp;year={2018},<br/>
-						  &nbsp;&nbsp;&nbsp;publisher={Elsevier}<br/>
-						}</div>">cite
-						</button>	
-						<button type="button" id="CVIU2018-more-button" class="btn btn-confirm" onClick="$use('CVIU2018-more','CVIU2018-more-button')">unfold</button>						
-					</div>					
-				</div>
+				</div>				
+
 			</div>			
 		</div>
+
 		<div class="grid3" id="research2" style="background:#ffffff">
 			<div class="grid3-header">
-				<img src="./images/33384-200.png" title="Artdirector" />
-				<p>Image Completion</p>
+				<img src="./images/face_related.png" title="Artdirector" />
+				<p>Human-Oriented Editing</p>
 			</div>
 			<div class="grid3-content">
-			    <div class="well well-lg well-gray">
-					<div class="name">
-						<p><b>Structure-Guided Image Inpainting Using Homography Transformation</b></p>
-						<small>TMM 2018<br/>Jiaying Liu, Shuai Yang, Yuming Fang and Zongming Guo.</small>
+				<div class="well well-lg well-gray">
+					<div class="collection-name">
+						<p><b>Face Stylization and Editing</b></p>
 					</div>
-					<div class="info">
-						<img src="images/project/TMM18.jpg"></img>
-						<p>In this paper, we present a novel structure-guided framework for exemplar-based image inpainting. The main idea is to exploit the regularity of image self-similarity in forms of Homography transformation matrices to guide and improve the inpainting process.</p>
-					</div>					
-					<div class="buttons">
-						<a class="btn btn-confirm" target="_blank" href="http://www.icst.pku.edu.cn/struct/Pub%20Files/2018/ys-tmm18.pdf">pdf</a>
-						<button type="button" class="btn btn-confirm"
-						  data-container="body" data-toggle="popover"  data-html="true" data-placement="bottom" 
-						  data-content="<div>@article{liu2018structure,<br/>
-						  &nbsp;&nbsp;&nbsp;title={Structure-Guided Image Inpainting Using Homography Transformation},<br/>
-						  &nbsp;&nbsp;&nbsp;author={Liu, Jiaying and Yang, Shuai and Fang, Yuming and Guo, Zongming},<br/>
-						  &nbsp;&nbsp;&nbsp;journal={IEEE Transactions on Multimedia},<br/>
-						  &nbsp;&nbsp;&nbsp; volume={20},<br/>
-						  &nbsp;&nbsp;&nbsp; number={12},<br/>
-						  &nbsp;&nbsp;&nbsp; pages={3252--3265},<br/>
-						  &nbsp;&nbsp;&nbsp; year={2018}<br/>
-						}</div>">cite
-						</button>						
-					</div>
-					<hr style="height: 1px; background-color: #DDDDDD"/>
-					<div class="name">
-						<p><b>Structure-Guided Image Completion via Regularity Statistics</b></p>
-						<small>ICASSP 2016<br/>Shuai Yang, Jiaying Liu, Sijie Song, Mading Li and Zongming Guo</small>
-					</div>
-					<div class="info"></div>
-					<div class="info" id="ICASSP2016-more" style="display:none">
-						<img src="images/project/ICASSP2016.png"></img>
-						<p>In this paper, we propose a novel hierarchical image completion approach using regularity statistics, considering structure features. </p>
-					</div>					
-					<div class="buttons">
-						<a class="btn btn-confirm" target="_blank" href="http://www.icst.pku.edu.cn/struct/Pub%20Files/2016/ys_icassp16.pdf">pdf</a>						
-						<a class="btn btn-confirm" target="_blank" href="http://www.icst.pku.edu.cn/struct/Projects/HIC3D.html">project</a>
-						<button type="button" class="btn btn-confirm"
-						  data-container="body" data-toggle="popover"  data-html="true" data-placement="bottom" 
-						  data-content="<div>@inproceedings{Yang2016Structure,<br/>
-						  &nbsp;&nbsp;&nbsp;title={Structure-guided image completion via regularity statistics},<br/>
-						  &nbsp;&nbsp;&nbsp;author={Yang, Shuai and Liu, Jiaying and Song, Sijie and Li, Mading and Guo, Zongming},<br/>
-						  &nbsp;&nbsp;&nbsp;booktitle={IEEE International Conference on Acoustics, Speech and Signal Processing},<br/>
-						  &nbsp;&nbsp;&nbsp;year={2016},<br/>
-						}</div>">cite
-						</button>
-						<button type="button" id="ICASSP2016-more-button" class="btn btn-confirm" onClick="$use('ICASSP2016-more','ICASSP2016-more-button')">unfold</button>							
+					<div class='row publication-entity'>
+						<div class='col-xs-4'>
+							<img class="paper-image" src="images/publication/DualStyleGAN.gif">
+						</div>
+						<div class='col-xs-8'>
+							<div class='paper-title'>Pastiche Master: Exemplar-Based High-Resolution Portrait Style Transfer</div>
+							<div class='paper-venue'>CVPR 2022</div>
+							<div class='paper-authors'>Shuai Yang, Liming Jiang, Ziwei Liu, Chen Change Loy</div>
+							<div class="buttons">
+								<a class="btn btn-confirm" href="#research2">pdf</a>
+								<a class="btn btn-confirm" href="#research2">project</a>
+								<a class="btn btn-confirm" href="#research2">code</a>
+								<button type="button" id="CVPR2022V2-more-button" class="btn btn-confirm" onClick="$use('CVPR2022V2-more','CVPR2022V2-more-button')">unfold</button>	
+							</div>	
+						</div>
+						<div class='col-xs-12'>
+							<div class="info" id="CVPR2022V2-more" style="display:none">
+								<img src="images/project/CVPR2022V2.jpg"></img>
+								This work present a novel DualStyleGAN for exemplar-based high-resolution (1024*1024) portrait style transfer. DualStyleGAN offers high-quality and high-resolution pastiches and provides flexible and diverse control over both color styles and complicated structural styles
+							</div>
+							<hr style="height: 1px; background-color: #DDDDDD"/>
+						</div>
+						<div class='col-xs-4'>
+							<img class="paper-image" src="images/publication/DeepPS.gif">
+						</div>
+						<div class='col-xs-8'>
+							<div class='paper-title'>Deep Plastic Surgery: Robust and Controllable Image Editing with Human-Drawn Sketches</div>
+							<div class='paper-venue'>ECCV 2020</div>
+							<div class='paper-authors'>Shuai Yang, Zhangyang Wang, Jiaying Liu, Zongming Guo</div>
+							<div class="buttons">
+								<a class="btn btn-confirm" target="_blank" href="https://arxiv.org/abs/2001.02890">pdf</a>
+								<a class="btn btn-confirm" target="_blank" href="projects/ECCV2020/index.html">project</a>
+								<a class="btn btn-confirm" target="_blank" href="https://github.com/VITA-Group/DeepPS">code</a>	
+								<button type="button" id="ECCV2020-more-button" class="btn btn-confirm" onClick="$use('ECCV2020-more','ECCV2020-more-button')">unfold</button>	
+							</div>
+							<hr style="height: 1px; background-color: #DDDDDD"/>
+							<div class='paper-title'>Controllable Sketch-to-Image Translation for Robust Face Synthesis</div>
+							<div class='paper-venue'>TIP 2021</div>
+							<div class='paper-authors'>Shuai Yang, Zhangyang Wang, Jiaying Liu, Zongming Guo</div>
+							<div class="buttons">
+								<a class="btn btn-confirm" target="_blank" href="http://39.96.165.147/Pub%20Files/2021/ys_tip21.pdf">pdf</a>
+								<button type="button" id="TIP2021-more-button" class="btn btn-confirm" onClick="$use('TIP2021-more','TIP2021-more-button')">unfold</button>	
+							</div>										
+						</div>	
+						<div class='col-xs-12'>
+							<div class="info" id="ECCV2020-more" style="display:none">
+								<img src="images/project/ECCV2020.png"></img>
+								This work presents DeepPS that allows users to synthesize and edit photos based on hand-drawn sketches. DeepPS works robustly on various sketches by setting refinement level <i>l</i> adaptive to the quality of the input sketches, <i>i.e.</i>, higher <i>l</i> for poorer sketches, thus tolerating the drawing errors and achieving the controllability on sketch faithfulness. 
+							</div>
+							<div class="info" id="TIP2021-more" style="display:none">
+								<img src="images/project/TIP2021.png"></img>
+								In this journal version, we explore more advanced user controllability on facial attribute editing and spatially non-uniform refinement. The former supplements the controllability over features that cannot be captured by the sketches such as the color information. The latter enables users to conveniently globally refine the rough sketches while locally preserving important structural details.
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>			
+
+				<div class="well well-lg well-gray">
+					<div class="collection-name">
+						<p><b>Face-Related Image Enhancement</b></p>
+					</div>
+					<div class='row publication-entity'>
+						<div class='col-xs-4'>
+							<img class="paper-image" src="images/publication/JFSR.png">
+						</div>
+						<div class='col-xs-8'>
+							<div class='paper-title'>Joint-Feature Guided Depth Map Super-Resolution With Face Priors</div>
+							<div class='paper-venue'>TCYB 2018</div>
+							<div class='paper-authors'>Shuai Yang, Jiaying Liu, Yuming Fang, Zongming Guo</div>
+							<div class="buttons">
+								<a class="btn btn-confirm" target="_blank" href="http://www.icst.pku.edu.cn/struct/Projects/JFSR/files/tcyb_yang16.pdf">pdf</a>
+								<a class="btn btn-confirm" target="_blank" href="http://www.icst.pku.edu.cn/struct/Projects/JFSR.html">project</a>
+								<button type="button" id="TCYB2017-more-button" class="btn btn-confirm" onClick="$use('TCYB2017-more','TCYB2017-more-button')">unfold</button>	
+							</div>	
+						</div>
+						<div class='col-xs-12'>	
+							<div class="info" id="TCYB2017-more" style="display:none">
+								<img src="images/project/TCYB2017.png"></img>
+								In this paper, we present a novel method to super-solve and recover the facial depth map nicely. The key idea of our approach is to exploit the exemplar-based method to obtain the reliable face priors from high quality facial depth map to further improve the depth image.
+							</div>
+							<hr style="height: 1px; background-color: #DDDDDD"/>
+						</div>
+						<div class='col-xs-4'>
+							<img class="paper-image" src="images/publication/1+N.jpg">
+						</div>
+						<div class='col-xs-8'>
+							<div class='paper-title'>1+N Fusion: Cascaded Self-Portrait Enhancement</div>
+							<div class='paper-venue'>ICASSP 2017</div>
+							<div class='paper-authors'>Shuai Yang, Jiaying Liu, Sifeng Xia, Zongming Guo</div>
+							<div class="buttons">
+								<a class="btn btn-confirm" target="_blank" href="http://www.icst.pku.edu.cn/struct/Pub%20Files/2017/ys_icassp17.pdf"> <!--style="display:none"--> pdf</a>
+								<a class="btn btn-confirm" target="_blank" href="http://www.icst.pku.edu.cn/struct/Projects/1plusn.html">project</a>
+								<button type="button" id="ICASSP2017-more-button" class="btn btn-confirm" onClick="$use('ICASSP2017-more','ICASSP2017-more-button')">unfold</button>	
+							</div>	
+						</div>
+						<div class='col-xs-12'>
+							<div class="info" id="ICASSP2017-more" style="display:none">
+								<img src="images/project/ICASSP2017.png"></img>
+								This work presents a novel cascaded framework to solve a self-portrait enhancement problem we call ''1+N'' problem, in which a self-portrait is enhanced with the help of N supporting photos that share the same scene and similar shooting time.
+							</div>
+						</div>						
+					</div>
+				</div>
+			</div>
 		</div>
+
 		<div class="grid3" id="research3">
 			<div class="grid3-header">
-				<img src="./images/123911-200.png" title="Artdirector" />
-				<p>Depth Enhancement</p>
+				<img src="./images/s3.png" title="Artdirector" />
+				<p>Image Translation</p>
 			</div>
 			<div class="grid3-content">
-			    <div class="well well-lg">
-					<div class="name">
-						<p><b>Joint-Feature Guided Depth Map Super-Resolution With Face Priors</b></p>
-						<small>TCYB 2018<br/>Shuai Yang, Jiaying Liu, Yuming Fang and Zongming Guo.</small>
+				<div class="well well-lg">
+					<div class="collection-name">
+						<p><b>Face-Related Image Enhancement</b></p>
 					</div>
-					<div class="info">
-						<img src="images/project/TCYB2017.png"></img>
-						<p>In this paper, we present a novel method to super-solve and recover the facial depth map nicely. The key idea of our approach is to exploit the exemplar-based method to obtain the reliable face priors from high quality facial depth map to further improve the depth image.</p>
-					</div>					
-					<div class="buttons">
-						<a class="btn btn-confirm" target="_blank" href="http://www.icst.pku.edu.cn/struct/Projects/JFSR/files/tcyb_yang16.pdf">pdf</a>
-						<a class="btn btn-confirm" target="_blank" href="http://www.icst.pku.edu.cn/struct/Projects/JFSR.html">project</a>
-						<button type="button" class="btn btn-confirm"
-						  data-container="body" data-toggle="popover"  data-html="true" data-placement="bottom" 
-						  data-content="<div>@article{Yang2016Joint,<br/>
-							&nbsp;&nbsp;&nbsp;title={Joint-Feature Guided Depth Map Super-Resolution With Face Priors},<br/>
-							&nbsp;&nbsp;&nbsp;author={Yang, Shuai and Liu, Jiaying and Fang, Yuming and Guo, Zongming},<br/>
-							&nbsp;&nbsp;&nbsp;journal={IEEE Transactions on Cybernetics},<br/>
-							&nbsp;&nbsp;&nbsp;volume={48},<br/>
-							&nbsp;&nbsp;&nbsp;number={1},<br/>
-							&nbsp;&nbsp;&nbsp;pages={399--411},<br/>
-							&nbsp;&nbsp;&nbsp;year={2018}<br/>
-						}</div>">cite
-						</button>		
-					</div>	<hr/>							
-					<div class="name">						
-						<p><b>Facial Depth Map Enhancement via Neighbor Embedding</b></p>
-						<small>ICPR 2016<br/>Shuai Yang, Sijie Song, Qikun Guo, Xiaoqing Lu and Jiaying Liu.</small>
-					</div>
-					<div class="info"></div>
-					<div class="info" id="ICPR2016-more" style="display:none">
-						<img src="images/project/ICPR2016.jpg"></img>
-						<p>In this paper, we present a novel method to super-solve and recover the facial depth map nicely. The key idea of our approach is to exploit the learning-based method to obtain the reliable face priors from high quality facial depth map to further improve the depth image.</p>
-					</div>					
-					<div class="buttons">
-						<a class="btn btn-confirm" target="_blank" href="http://www.icst.pku.edu.cn/course/icb/Pub%20Files/2016/ys_icpr16.pdf">pdf</a>
-						<button type="button" class="btn btn-confirm"
-						  data-container="body" data-toggle="popover"  data-html="true" data-placement="bottom" 
-						  data-content="<div>@inproceedings{Yang2016Facial,<br/>
-						  &nbsp;&nbsp;&nbsp;title={Facial Depth Map Enhancement via Neighbor Embedding},<br/>
-						  &nbsp;&nbsp;&nbsp;author={Yang. Shuai, Song. Sijie, Guo. Qikun, and Liu. Jiaying},<br/>
-						  &nbsp;&nbsp;&nbsp;booktitle={IEEE International Conference on Pattern Recognition},<br/>
-						  &nbsp;&nbsp;&nbsp;year={2016},<br/>
-						}</div>">cite
-						</button>	
-						<button type="button" id="ICPR2016-more-button" class="btn btn-confirm" onClick="$use('ICPR2016-more','ICPR2016-more-button')">unfold</button>						
+					<div class='row publication-entity'>
+						<div class='col-xs-4'>
+							<img class="paper-image" src="images/publication/GPUNIT.jpg">
+						</div>
+						<div class='col-xs-8'>
+							<div class='paper-title'>Unsupervised Image-to-Image Translation with Generative Prior</div>
+							<div class='paper-venue'>CVPR 2022</div>
+							<div class='paper-authors'>Shuai Yang, Liming Jiang, Ziwei Liu, Chen Change Loy</div>
+							<div class="buttons">
+								<a class="btn btn-confirm" href="#research3">pdf</a>
+								<a class="btn btn-confirm" href="#research3">project</a>
+								<a class="btn btn-confirm" target="_blank" href="https://github.com/williamyang1991/GP-UNIT">code</a>
+								<button type="button" id="CVPR2022-more-button" class="btn btn-confirm" onClick="$use('CVPR2022-more','CVPR2022-more-button')">unfold</button>	
+							</div>	
+						</div>
+						<div class='col-xs-12'>	
+							<div class="info" id="CVPR2022-more" style="display:none">
+								<img src="images/project/CVPR2022.jpg"></img>
+								We propose a versatile unsupervised image translation framework with generative prior that supports various translations from close domains to distant domains with drastic shape and appearance discrepancies.
+							</div>
+						</div>					
 					</div>
 				</div>
-			</div>		
-		</div>
+			</div>
+		</div>			
+
 		<div class="grid3" id="research4" style="background:#ffffff">
 			<div class="grid3-header">
-				<img src="./images/s3.png" title="Artdirector" />
+				<img src="./images/123911-200.png" title="Artdirector" />
 				<p>Other Projects</p>
 			</div>
 			<div class="grid3-content">
-			    <div class="well well-lg well-gray">
-					<div class="name">
-						<p><b>1+N Fusion: Cascaded Self-Portrait Enhancement</b></p>
-						<small>ICASSP 2017<br/>Shuai Yang, Jiaying Liu, Sifeng Xia and Zongming Guo.</small>
+				<div class="well well-lg well-gray">
+					<div class='row publication-entity'>
+						<div class='col-xs-4'>
+							<img class="paper-image" src="images/publication/HIC3D.png">
+						</div>
+						<div class='col-xs-8'>
+							<div class='paper-title'>Structure-Guided Image Inpainting Using Homography Transformation</div>
+							<div class='paper-venue'>TMM 2018</div>
+							<div class='paper-authors'>Jiaying Liu, Shuai Yang, Yuming Fang, Zongming Guo</div>
+							<div class="buttons">
+								<a class="btn btn-confirm" target="_blank" href="http://www.icst.pku.edu.cn/struct/Pub%20Files/2018/ys-tmm18.pdf">pdf</a>
+								<button type="button" id="TMM2018-more-button" class="btn btn-confirm" onClick="$use('TMM2018-more','TMM2018-more-button')">unfold</button>	
+							</div>
+							<hr style="height: 1px; background-color: #DDDDDD"/>
+							<div class='paper-title'>Structure-Guided Image Completion via Regularity Statistics</div>
+							<div class='paper-venue'>ICASSP 2016</div>
+							<div class='paper-authors'>Shuai Yang, Jiaying Liu, Sijie Song, Mading Li, Zongming Guo</div>
+							<div class="buttons">
+								<a class="btn btn-confirm" target="_blank" href="http://www.icst.pku.edu.cn/struct/Pub%20Files/2016/ys_icassp16.pdf">pdf</a>						
+								<a class="btn btn-confirm" target="_blank" href="http://www.icst.pku.edu.cn/struct/Projects/HIC3D.html">project</a>
+								<button type="button" id="ICASSP2016-more-button" class="btn btn-confirm" onClick="$use('ICASSP2016-more','ICASSP2016-more-button')">unfold</button>	
+							</div>										
+						</div>	
+						<div class='col-xs-12'>
+							<div class="info" id="TMM2018-more" style="display:none">
+								<img src="images/project/TMM18.jpg"></img>
+								In this paper, we present a novel structure-guided framework for exemplar-based image inpainting. The main idea is to exploit the regularity of image self-similarity in forms of Homography transformation matrices to guide and improve the inpainting process.
+							</div>
+							<div class="info" id="ICASSP2016-more" style="display:none">
+								<img src="images/project/ICASSP2016.png"></img>
+								In this paper, we propose a novel hierarchical image completion approach using regularity statistics, considering structure features.
+							</div>
+						</div>
 					</div>
-					<div class="info">
-						<img src="images/project/ICASSP2017.png"></img>
-						<p>This work presents a novel cascaded framework to solve a self-portrait enhancement problem we call ''1+N'' problem,
-						in which a self-portrait is enhanced with the help of N supporting photos that share the same scene and similar shooting time. </p>
-					</div>					
-					<div class="buttons">
-						<a class="btn btn-confirm" target="_blank" href="http://www.icst.pku.edu.cn/struct/Pub%20Files/2017/ys_icassp17.pdf"> <!--style="display:none"--> pdf</a>
-						<a class="btn btn-confirm" target="_blank" href="http://www.icst.pku.edu.cn/struct/Projects/1plusn.html">project</a>
-						<button type="button" class="btn btn-confirm" 
-						  data-container="body" data-toggle="popover"  data-html="true" data-placement="bottom" 
-						  data-content="<div>@inproceedings{Yang2017Fusion,<br/>
-						  &nbsp;&nbsp;&nbsp;title={1+N Fusion: Cascaded Self-Portrait Enhancement},<br/>
-						  &nbsp;&nbsp;&nbsp;author={Yang, Shuai and Liu, Jiaying and Xia, Sifeng and Guo, Zongming},<br/>
-						  &nbsp;&nbsp;&nbsp;booktitle={IEEE International Conference on Acoustics, Speech, and Signal Processing},<br/>
-						  &nbsp;&nbsp;&nbsp;year={2017},<br/>
-						}</div>"> <!--style="display:none"--> cite
-						</button>						
-					</div>
-				</div>			
-			    <div class="well well-lg well-gray">
-					<div class="name">
-						<p><b>Perspective Distorted Video Restoration and Stabilization For Mobile Devices</b></p>
-						<small>ChinaSIP 2015<br/>Shuai Yang, Jiaying Liu, Wenhan Yang and Zongming Guo.</small>
-					</div>
-					<div class="info">
-						<img src="images/project/ChinaSIP2015.png"></img>
-						<p>This paper presents a novel perspective distorted video restoration and stabilization approach for mobile devices.</p>
-					</div>					
-					<div class="buttons">
-						<a class="btn btn-confirm" target="_blank" href="http://www.icst.pku.edu.cn/struct/Pub%20Files/2015/ys_chinasip15.pdf">pdf</a>
-						<a class="btn btn-confirm" target="_blank" href="http://www.icst.pku.edu.cn/struct/Projects/PICE.html">project</a>
-						<button type="button" class="btn btn-confirm"
-						  data-container="body" data-toggle="popover"  data-html="true" data-placement="bottom" 
-						  data-content="<div>@inproceedings{Yang2015Perspective,<br/>
-						  &nbsp;&nbsp;&nbsp;title={Perspective distorted video restoration and stabilization for mobile devices},<br/>
-						  &nbsp;&nbsp;&nbsp;author={Yang, Shuai and Liu, Jiaying and Yang, Wenhan and Guo, Zongming},<br/>
-						  &nbsp;&nbsp;&nbsp;booktitle={IEEE China Summit and International Conference on Signal and Information Processing},<br/>
-						  &nbsp;&nbsp;&nbsp;year={2015},<br/>
-						}</div>">cite
-						</button>						
-					</div>
-				</div>				
-			</div>				
-		</div>		
-			
+				</div>
+			</div>
+		</div>
+
 		<div class="grid1" id="course">
 			<h3>Course Projects</h3>
 			<p></p>
 		</div>
+
 		<div class="grid3">
 			<div class="grid3-content">
-			    <div class="well well-lg" id="LogoDetect">
+				<div class="well well-lg" id="LogoDetect">
 					<div class="name">
 						<p><b>Logo Detection System</b></p>
 						<small> Digital Image Processing, 2016 <br/>Shuai Yang, Yanghao Li and Yicheng Huang</small>
@@ -493,8 +498,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<button type="button" id="logoDetect-more-button" class="btn btn-confirm" onClick="$use('logoDetect-more','logoDetect-more-button')">unfold</button>				
 					</div>				
 				</div>
-				
-			    <div class="well well-lg" id="ImageRec">
+
+				<div class="well well-lg" id="ImageRec">
 					<div class="name">
 						<p><b>Simple Image Recognition System</b></p>
 						<small> Digital Image Processing, 2014 <br/>Shuai Yang and Guangyuan Yang</small>
@@ -519,8 +524,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<button type="button" id="imageRec-more-button" class="btn btn-confirm" onClick="$use('imageRec-more','imageRec-more-button')">unfold</button>				
 					</div>				
 				</div>
-				
-			    <div class="well well-lg" id="VideoPro">
+
+				<div class="well well-lg" id="VideoPro">
 					<div class="name">
 						<p><b>Simple Video Processing System</b></p>
 						<small> Digital Video Processing and Analysis, 2014 <br/>Shuai Yang, Li Meng and Chong Ruan</small>
@@ -553,8 +558,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<button type="button" id="videoPro-more-button" class="btn btn-confirm" onClick="$use('videoPro-more','videoPro-more-button')">unfold</button>				
 					</div>				
 				</div>
-				
-			    <div class="well well-lg" id="eCourse">
+
+				<div class="well well-lg" id="eCourse">
 					<div class="name">
 						<p><b>e-Course</b></p>
 						<small> Computer Networks (Honor Track), 2014 <br/>Shuai Yang, Yuan Huang, Gaoxiang Zhang and Ran Wang</small>
@@ -569,21 +574,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<h3>Project Presentation</h3>
 						<p>Click the picture below to see the project presentation:</p>
 						<div class="portfolio-item">
-							<div class="hover-bg" style="width:400px;height:300px;margin-left:auto;margin-right:auto"> <a href="images/project/ecourse1.jpg" title="e-Course" rel="prettyPhoto">
-							  <div class="hover-text">
-								<h4>e-Course</h4>
-								<small>e-Course presentation</small>								
-								<div class="clearfix"></div>
-								</div>
-							  <img src="images/portfolio/UI1.jpg" class="img-responsive" alt="e-Course"> </a> </div>
+							<div class="hover-bg" style="width:400px;height:300px;margin-left:auto;margin-right:auto"> 
+								<a href="images/project/ecourse1.jpg" title="e-Course" rel="prettyPhoto">
+									<div class="hover-text">
+										<h4>e-Course</h4>
+										<small>e-Course presentation</small>								
+										<div class="clearfix"></div>
+									</div>
+									<img src="images/portfolio/UI1.jpg" class="img-responsive" alt="e-Course"></img>
+								</a> 
+							</div>
 						</div>
 					</div>						
 					<div class="buttons">
 						<button type="button" id="eCourse-more-button" class="btn btn-confirm" onClick="$use('eCourse-more','eCourse-more-button')">unfold</button>				
 					</div>				
 				</div>
-				
-			    <div class="well well-lg" id="CPU">
+
+				<div class="well well-lg" id="CPU">
 					<div class="name">
 						<p><b>CPU Simulator</b></p>
 						<small>Computer Architectures, 2014 <br/>Shuai Yang, Yuan Huang and Gaoxiang Zhang</small>
@@ -605,8 +613,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<a class="btn btn-confirm" target="_blank" href="http://pan.baidu.com/s/1eS2pQV4">executable file</a>						
 					</div>				
 				</div>
-				
-			    <div class="well well-lg" id="Taiko">
+
+				<div class="well well-lg" id="Taiko">
 					<div class="name">
 						<p><b>Taiko</b></p>
 						<small>Java Programming, 2013 <br/>Shuai Yang, Yiming Wu, Yiqing Xue and Zheng Huang</small>
@@ -629,8 +637,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<button type="button" class="btn btn-confirm" onclick= "javascript:alert('The .exe file is generated from .class file and it is not guaranteed to work on every computer.');location='http://yun.baidu.com/share/link?shareid=1237956819&uk=1930114363&third=0'">executable file</button>
 					</div>				
 				</div>
-			
-			    <div class="well well-lg" id="LinkGame">
+
+				<div class="well well-lg" id="LinkGame">
 					<div class="name">
 						<p><b>LinkGame</b></p>
 						<small>Practice of Data Structure and Algorithm, 2012 <br/>Shuai Yang, Yiming Wu and Yiqing Xue</small>
@@ -660,8 +668,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<a class="btn btn-confirm" target="_blank" href="http://yun.baidu.com/s/1jGfZ0pC">executable file</a>
 					</div>				
 				</div>
-			
-			    <div class="well well-lg" id="Gobang">
+
+				<div class="well well-lg" id="Gobang">
 					<div class="name">
 						<p><b>Leisure Gobang</b></p>
 						<small>Introduction to Computation, 2010 <br/>Shuai Yang</small>
@@ -684,39 +692,40 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>				
 				</div>
 			</div>				
-		</div>				
+		</div>	
+
 		<div class="footer">
-			<p>2016 Shuai Yang. Powered by <a href="http://w3layouts.com/">w3layouts</a>, <a href="http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/">prettyPhoto</a>, <a href="http://getbootstrap.com/2.3.2/">bootstrap</a>, <a href="http://isotope.metafizzy.co/">Isotope</a></p>
+			<p>2022 Shuai Yang. Powered by <a href="http://w3layouts.com/">w3layouts</a>, <a href="http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/">prettyPhoto</a>, <a href="http://getbootstrap.com/2.3.2/">bootstrap</a>, <a href="http://isotope.metafizzy.co/">Isotope</a></p>
 		</div>
 	</div>
-	
-		<script type="text/javascript" src="js/jquery.min.js"></script>
-		<script type="text/javascript" src="js/bootstrap.js"></script>
-		<script type="text/javascript" src="js/jquery.banner.js"></script>
-		<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>		
-		<script type="text/javascript" src="js/jquery.isotope.js"></script>	
-		<script type="text/javascript" src="js/main.js"></script>	
-		<script type="text/javascript">
-			jQuery(document).ready(function($) {
-				$(".scroll").click(function(event){		
-					event.preventDefault();
-					$('html,body').animate({scrollTop:$(this.hash).offset().top},800);
-				});
-			});		
-			$(function () 
-			  { $("[data-toggle='popover']").popover();
-			  });
-			function $use(targetid,objN){
-				var d=document.getElementById(targetid);
-				var sb=document.getElementById(objN);
-				$("#"+targetid).toggle(1000);
-				if (sb.innerHTML=="unfold"){
-					sb.innerHTML="fold";
-				} else {
-					sb.innerHTML='unfold';
-				}
+
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/jquery.banner.js"></script>
+	<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>		
+	<script type="text/javascript" src="js/jquery.isotope.js"></script>	
+	<script type="text/javascript" src="js/main.js"></script>	
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},800);
+			});
+		});		
+		$(function () 
+			{ $("[data-toggle='popover']").popover();
+		});
+		function $use(targetid,objN){
+			var d=document.getElementById(targetid);
+			var sb=document.getElementById(objN);
+			$("#"+targetid).toggle(1000);
+			if (sb.innerHTML=="unfold"){
+				sb.innerHTML="fold";
+			} else {
+				sb.innerHTML='unfold';
 			}
-		</script>   		
-	</body>
+		}
+	</script>   		
+</body>
 </html>
 
