@@ -373,6 +373,35 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</div>						
 					</div>
 				</div>
+
+				<div class="well well-lg well-gray">
+					<div class="collection-name">
+						<p><b>Deep Fashion</b></p>
+					</div>
+					<div class='row publication-entity'>
+						<div class='col-xs-4'>
+							<img class="paper-image" src="images/publication/text2human.jpg">
+						</div>
+						<div class='col-xs-8'>
+							<div class='paper-title'>Text2Human: Text-Driven Controllable Human Image Generation</div>
+							<div class='paper-venue'>TOG (SIGGRAPH) 2022</div>
+							<div class='paper-authors'>Yuming Jiang, Shuai Yang, Haonan Qiu, Wayne Wu, Chen Change Loy, Ziwei Liu</div>
+							<div class="buttons">
+								<a class="btn btn-confirm" target="_blank" href="https://arxiv.org/abs/2205.15996">pdf</a>
+								<a class="btn btn-confirm" target="_blank" href="https://yumingj.github.io/projects/Text2Human.html">project</a>
+								<a class="btn btn-confirm" target="_blank" href="https://github.com/yumingj/Text2Human">code</a>
+								<a class="btn btn-confirm" target="_blank" href="https://github.com/yumingj/DeepFashion-MultiModal">dataset</a>	
+								<button type="button" id="TOG2022-more-button" class="btn btn-confirm" onClick="$use('TOG2022-more','TOG2022-more-button')">unfold</button>	
+							</div>	
+						</div>
+						<div class='col-xs-12'>	
+							<div class="info" id="TOG2022-more" style="display:none">
+								<img src="images/project/TOG2022.png"></img>
+								In this work, we proposed the Text2Human framework for textdriven controllable human generation in two stages: pose-to-parsing and parsing-to-human. The first stage synthesizes the human parsing masks based on required clothes shapes. In the second stage, we propose a hierarchical VQVAE with texture-aware codebooks to capture the rich multi-scale representations for diverse clothes textures, and then propose a sampler with mixture-of-experts to sample desired human images conditioned on the texts describing the textures. 
+							</div>
+						</div>					
+					</div>
+				</div>
 			</div>
 		</div>
 
