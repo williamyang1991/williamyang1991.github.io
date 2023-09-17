@@ -36,7 +36,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<li id="dropdown-a"><a href="#research1"  class="scroll">Text Stylization</a></li>
 							<li id="dropdown-a"><a href="#research2"  class="scroll">Human-Oriented Editing</a></li>
 							<li id="dropdown-a"><a href="#research3"  class="scroll">Image Translation</a></li>
-							<li id="dropdown-a"><a href="#research4"  class="scroll">Other Projects</a></li>
+							<li id="dropdown-a"><a href="#research4"  class="scroll">Other/Video Projects</a></li>
 						</ul>
 					</li>					
 					<li id="Course" onclick="func('Course')"><a href="#course" class="scroll">Course Projects</a></li>
@@ -429,7 +429,33 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="grid3" id="research3">
 			<div class="grid3-header">
 				<img src="./images/s3.png" title="Artdirector" />
-				<p>Image Translation</p>
+				<p>Image/Video Translation</p>
+			</div>
+			<div class="grid3-content">
+				<div class="well well-lg">
+					<div class='row publication-entity'>
+						<div class='col-xs-4'>
+							<video muted autoplay="autoplay" loop="loop" src="images/publication/Rerender.mp4" style="width: 100%; height: auto;"></video>					
+						</div>
+						<div class='col-xs-8'>
+							<div class='paper-title'>Rerender A Video: Zero-Shot Text-Guided Video-to-Video Translation</div>
+							<div class='paper-venue'>SIGGRAPH Asia 2023</div>
+							<div class='paper-authors'>Shuai Yang, Yifan Zhou, Ziwei Liu, Chen Change Loy</div>
+							<div class="buttons">
+								<a class="btn btn-confirm" target="_blank" href="https://arxiv.org/abs/2306.07954">pdf</a>
+								<a class="btn btn-confirm" target="_blank" href="https://www.mmlab-ntu.com/project/rerender/">project</a>
+								<a class="btn btn-confirm" target="_blank" href="hhttps://github.com/williamyang1991/Rerender_A_Video">code</a>
+								<button type="button" id="SA2023-more-button" class="btn btn-confirm" onClick="$use('SA2023-more','SA2023-more-button')">unfold</button>	
+							</div>							
+						</div>
+						<div class='col-xs-12'>	
+							<div class="info" id="SA2023-more" style="display:none">
+								<img src="images/project/SIGGRAPHASIA2023.jpg"></img>
+								We present a novel zero-shot framework to adapt image diffusion models for text-guided video translation. Our method utilizes hierarchical cross-frame constraints to enforce temporal consistency in both global style and low-level textures, leveraging the key optical flow at a low cost (without re-training or optimization).
+							</div>
+						</div>					
+					</div>
+				</div>
 			</div>
 			<div class="grid3-content">
 				<div class="well well-lg">
