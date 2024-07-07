@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0050)http://www.icst.pku.edu.cn/course/icb/MRS_MCI.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="language" content="english">
+<title>Text Effects Transfer</title>
+<meta name="description" content="Text Effects Transfer">
+<meta name="author" content="Shuai Yang">
+<link rel="icon" type="image/x-icon" href="http://www.icst.pku.edu.cn/favicon.ico">
+<link rel="stylesheet" type="text/css" href="TETGAN/css/project.css">
+</head>
+	<script> 
+	function coming_soon()
+	{
+		alert("We are cleaning up our code to make it more simple and readable");
+	}
+	</script> 
+
+<body>
+<div id="main">
+  
+	<div class="content"><br>
+		<div class="title">
+			<p class="banner"align="center">AAAI 2019</p>
+			<h1>TET-GAN: Text Effects Transfer via Stylization and Destylization</h1>
+		</div>
+		<div class="authors">
+			<div class='author'>
+				 <A href="mailto:williamyang@pku.edu.cn" style="text-decoration: none">Shuai Yang</A>
+		    </div>
+			<div class='author'>
+				 <A href="mailto:liujiaying@pku.edu.cn" style="text-decoration: none">Jiaying Liu</A>
+			</div>
+			<div class='author'>
+				 <A href="mailto:daooshee@pku.edu.cn" style="text-decoration: none">Wenjing Wang</A>
+			</div>
+			<div class='author'>
+				 <A href="mailto:guozongming@pku.edu.cn" style="text-decoration: none">Zongming Guo</A>
+			</div>			
+		</div>
+		<br>
+		<div class="overview sec">
+			<div class="picture_wrapper">
+		  		<img src='TETGAN/figures/example.png' width='100%' alt="Teaser" >
+		  		<p style="text-align: center">Figure 1. Text effects transfer results produced by TET-GAN.</p>
+	  		</div>
+	  	</div>
+
+		<div class="abstract_sec">
+			<h2>Abstract</h2>
+			<div class='desp'>
+				<p style="text-align:justify">
+				 Text effects transfer technology automatically makes the text dramatically more impressive. However, previous style transfer methods either study the model for general style, which cannot handle the highly-structured text effects along the glyph, or require manual design of subtle matching criteria for text effects. In this paper, we focus on the use of the powerful representation abilities of deep neural features for text effects transfer. For this purpose, we propose a novel Texture Effects Transfer GAN (<b>TET-GAN</b>), which consists of a stylization subnetwork and a destylization subnetwork. The key idea is to train our network to accomplish both the objective of style transfer and style removal, so that it can learn to disentangle and recombine the content and style features of text effects images. To support the training of our network, we propose a new text effects dataset with as much as 64 professionally designed styles on 837 characters. We show that the disentangled feature representations enable us to transfer or remove all these styles on arbitrary glyphs using one network. Furthermore, the flexible network design empowers TET-GAN to efficiently extend to a new text style via one-shot learning where only one example is required. We demonstrate the superiority of the proposed method in generating high-quality stylized text over the state-of-the-art methods.
+				 </p>
+			</div>
+		</div>
+
+		<div class="abstract_sec">
+			<h2>Framework</h2>
+			<div class="images">
+		  		<img src='TETGAN/figures/framework.png' width='100%' alt="Teaser" >
+		  		<p style="text-align: justify">Figure 2. The TET-GAN architecture. (a) An overview of TET-GAN architecture. Our network is trained via three objectives of autoencoder, destylization and stylization. (b) Glyph autoencoder to learn content features. (c) Destylization by disentangling content features from text effect images. (d) Stylization by combining content and style features.</p>
+	  		</div>
+	  	</div>	
+
+		<div class="abstract_sec">
+			<h2>Dataset</h2>
+			<div class="images">
+		  		<img src='TETGAN/figures/dataset.png' width='100%' alt="Teaser" >
+		  		<p style="text-align: justify">Figure 3. An overview of our text effects dataset. Our dataset including <b>64 text effects</b> each with <b>775 Chinese characters</b>, <b>52 English letters</b> and <b>10 Arabic numerals</b>. Each text effects image has a size of 320*320 and is provided with its corresponding raw text image.</p>
+	  		</div>
+	  	</div>
+
+		<div class="download_sec">
+			<h2>Resources</h2>
+			<div>
+				<li><strong>Paper</strong>: <a href="https://arxiv.org/abs/1812.06384">arXiv</a></li>
+				<li><strong>Code</strong>: <a href="https://github.com/williamyang1991/TET-GAN">Pytorch implementation</a></li>
+				<li><strong>Dataset</strong>: <a href="https://drive.google.com/drive/folders/1NTVUWy099BIXuu2Y5mJUYxAxOZ96Qwnz?usp=sharing">Google Drive</a>| <a href="https://pan.baidu.com/s/1e0OIPob9cKCqFua7PKzIRg">Baidu Cloud</a></li>
+				<li><strong>Supplementary Material</strong>: <a href="TETGAN/files/AAAI-Supp.pdf">pdf</a> (12.7M)</li>
+				<li><strong>Related Projects:</strong> <a href="http://www.icst.pku.edu.cn/struct/Projects/TET.html">Awesome Typography:
+				Statistics-Based Text Effects Transfer (CVPR 2017)</a></li>
+			</div>
+		</div>
+
+		<div class='citation_sec'>
+			<h2>Citation</h2>
+			<p class='bibtex'>@inproceedings{Yang2019TETGAN, 
+ title={TET-GAN: Text Effects Transfer via Stylization and Destylization},
+ author={Yang, Shuai and Liu, Jiaying and Wang, Wenjing and Guo, Zongming}, 
+ booktitle={AAAI Conference on Artificial Intelligence},
+ year={2019}
+}</p>
+		</div>
+
+		<div class="experiments_sec">
+			<h2>Selected Results</h2>
+			<div id="images">
+				<img src="TETGAN/figures/compare.jpg" alt="" width="100%" >		
+				<P style="text-align: left">Figure 4. Comparison with state-of-the-art methods on various text effects. (a) Input example text effects with the target text in the lower-left corner. (b) Our destylization results. (c) Our stylization results. (d) pix2pix-cGAN [1]. (e) StarGAN [2]. (f) T-Effect [3]. (g) Neural Doodles [4]. (h) Neural Style Transfer [5].</P>	
+			</div>				
+			<div id="images">
+				<img src="TETGAN/figures/style-inter.jpg" alt="" width="100%" >		
+				<P style="text-align: center">Figure 5. Text effects interpolation.</P>	
+			</div>					
+		</div>
+
+	<div class="reference_sec">
+		<h2>Reference</h2>
+		  <div class="bib">
+		    <p>[1] P. Isola, J. Y. Zhu, T. Zhou, and A. A. Efros. Imageto-image translation with conditional adversarial networks. CVPR 2017.</p>
+		    <p>[2] Y. Choi, M. Choi, M. Kim, J. W. Ha, S. Kim, and J. Choo. Stargan: Unified generative adversarial networks for multi-domain image-to-image translation. CVPR 2018.</p>
+		  	<p>[3] S. Yang, J. Liu, Z. Lian, and Z. Guo. Awesome typography: Statistics-based text effects transfer. CVPR 2017.</p>
+			<p>[4] A. J. Champandard. Semantic style transfer and turning two-bit doodles into fine artworks. arXiv:1603.01768, 2016</p>
+			<p>[5] L. A. Gatys, A. S. Ecker, and M. Bethge. Image style transfer using convolutional neural networks. CVPR 2016.</p>
+		  </div>
+	</div>
+		<br></br> 
+	<p class="banner"align="center">Last update: December 2018</p>
+  </div>
+</div>
+</body>
+</html>
