@@ -168,7 +168,7 @@ fieldset[disabled] .btn-confirm.active {
 }
 
 .publication-entity .btn{
-  font-size: 0.7em;
+  /*font-size: 0.7em;*/
 }
 
 .collection-name{
