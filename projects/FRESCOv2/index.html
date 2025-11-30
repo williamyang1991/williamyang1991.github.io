@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="FRESCO integrates intra-frame correspondence with inter-frame correspondence to formulate a more robust spatial-temporal constraint..">
+  <meta name="keywords" content="Video Translation, Video Editing, Zero-Shot">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zero-Shot Video Translation and Editing with Frame Spatial-Temporal Correspondence</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://williamyang1991.github.io/">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://www.mmlab-ntu.com/project/fresco/">
+            FRESCOv1
+          </a>
+          <a class="navbar-item" href="https://www.mmlab-ntu.com/project/rerender/">
+            Rerender-A-Video
+          </a>
+          <a class="navbar-item" href="https://gaowenshuo.github.io/FlowPortalProject/">
+            FlowPortal
+          </a>
+          <a class="navbar-item" href="https://gaowenshuo.github.io/AnyPortal/">
+            AnyPortal
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Zero-Shot Video Translation and Editing with Frame Spatial-Temporal Correspondence</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://williamyang1991.github.io/">Shuai Yang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://github.com/Sunnycookies">Junxin Lin</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://zhouyifan.net/">Yifan Zhou</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://liuziwei7.github.io/">Ziwei Liu</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.mmlab-ntu.com/person/ccloy/">Chen Change Loy</a><sup>2</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Wangxuan Institute of Computer Technology, Peking University</span>
+            <span class="author-block"><sup>2</sup>S-Lab, Nanyang Technological University, Singapore</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- 
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- 
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> Video Link. -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/Sunnycookies/FRESCO-v2"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://drive.google.com/file/d/12LkAEmzRBgSMKqQqgHX5_LmhYI59ZRAZ/view?usp=sharing"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+        <img src="./static/images/teaser.jpg"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+      <h2 class="subtitle has-text-centered">
+        FRESCO-v2 enables high-quality and coherent video translation based on pre-trained image diffusion model. Given an input video, our method
+        re-renders it based on a target text prompt, while preserving its semantic content and motion. FRESCO-v2 is compatible with various techniques
+        like <a href="https://github.com/lllyasviel/ControlNet" target="_blank">ControlNet</a>, 
+        <a href="https://github.com/ermongroup/SDEdit" target="_blank">SDEdit</a>, 
+        <a href="https://github.com/MichalGeyer/plug-and-play" target="_blank">Plug-and-Play</a>,
+        <a href="https://diffusion-tokenflow.github.io/" target="_blank">TokenFlow</a>,
+         and <a href="https://github.com/microsoft/LoRA" target="_blank">LoRA</a>, enabling flexible translation and editing.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/woman_input.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            Input 
+          </h3>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/woman_our_monalisa.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            The Mona Lisa, smile, oil painting by Leonardo Da Vinci 
+          </h3>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/woman_our_cg.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            A beautiful woman in CG style, pink hair, tight hair
+          </h3>
+        </div>
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/woman_input.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            Input 
+          </h3>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/woman_our_old.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            A beautiful grandma, white hair
+          </h3>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/woman_our_cartoon.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            A beautiful cartoon girl, 2D flat, contour line
+          </h3>
+        </div>
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/woman_input.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            Input 
+          </h3>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/woman_silver.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            A shiny silver robotic woman, futuristic
+          </h3>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/woman_wood.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            A wood scuplture of a woman
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+             The remarkable efficacy of text-to-image diffusion models has motivated extensive exploration of their potential application in video domains. Zero-shot methods seek to extend image diffusion models to videos without necessitating model training. Recent methods mainly focus on incorporating inter-frame correspondence into attention mechanisms. However, the soft constraint imposed on determining where to attend to valid features can sometimes be insufficient, resulting in temporal inconsistency. In this paper, we introduce FRESCO, intra-frame correspondence alongside inter-frame correspondence to establish a more robust spatial-temporal constraint. This enhancement ensures a more consistent transformation of semantically similar content across frames. Beyond mere attention guidance, our approach involves an explicit update of features to achieve high spatial-temporal consistency with the input video, significantly improving the visual coherence of the resulting translated videos. Extensive experiments demonstrate the effectiveness of our proposed framework in producing high-quality, coherent videos, marking a notable improvement over existing zero-shot methods.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video.
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/video.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+    Paper video. -->
+  </div>
+</section>
+
+
+<section class="section" style="background-color:#f5f5f5; padding-bottom: 1em;">
+  <div class="container is-max-desktop">
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Experimental Results</h2>
+        <!-- Interpolating. -->
+        <h3 class="title is-4">More Results</h3>
+        <div class="content has-text-justified">
+          <p>
+            FRESCO-v2 is further instantiated on two kinds of image manipulation techniques: 
+            1) Adapting image-conditioned generation technique of <a href="https://github.com/lllyasviel/ControlNet" target="_blank">ControlNet</a> and 
+            <a href="https://github.com/ermongroup/SDEdit" target="_blank">SDEdit</a> for video-to-video translation;
+            2) Adapting text-guided image editing technique of <a href="https://github.com/MichalGeyer/plug-and-play" target="_blank">Plug-and-Play</a> for text-guided video editing. 
+            Moreover, we instantiate the proposed FRESCO adaptation on two hybrid frameworks based on video interpolation techniques of 
+            <a href="https://github.com/jamriska/ebsynth" target="_blank">EbSynth</a> and <a href="https://diffusion-tokenflow.github.io/" target="_blank">TokenFlow</a>, to facilitate long video manipulation.
+          </p>
+          <p>
+            Base Methods: <b>C</b> for ControlNet, <b>S</b> for SDEdit, <b>P</b> for Plug-and-Play, <b>E</b> for Ebsynth, <b>T</b> for TokenFlow
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>  
+<section class="hero is-light is-small" style="padding-bottom: 1em;">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carouse2" class="carouse results-carousel">
+        <div class="item item-more1">
+          <video poster="" id="more1" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/more/music_input.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            Input 
+          </h3>
+        </div>
+        <div class="item item-more2">
+          <video poster="" id="more2" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/more/music_our.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            A beautiful woman with headphones listening to music in CG cyberpunk style, neon (<b>CSE</b>)
+          </h3>
+        </div>
+        <div class="item item-more3">
+          <video poster="" id="more3" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/more/music_pnp_Mixed_loop a Greek marble sculpture of a beautiful woman with headphones listening to music.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            A Greek marble sculpture of a beautiful woman with headphones listening to music (<b>PTE</b>)
+          </h3>
+        </div>
+        <div class="item item-more4">
+          <video poster="" id="more4" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/more/music_pnp_Mixed_loop a Pixar animation of a beautiful woman with headphones listening to music.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            A Pixar animation of a beautiful woman with headphones listening to music (<b>PTE</b>)
+          </h3>
+        </div>
+
+        <div class="item item-more5">
+          <video poster="" id="more5" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/more/cyberpunkfox_input.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            Input 
+          </h3>
+        </div>
+        <div class="item item-more6">
+          <video poster="" id="more6" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/more/cyberpunkfox_our.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            A cyberpunk fox in the cyberpunk style (<b>CSE</b>)
+          </h3>
+        </div>
+        <div class="item item-more7">
+          <video poster="" id="more7" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/more/cyberpunkfox_pnp_Mixed_loop a Dalmatian dog.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            An orange fluffy fox doll (<b>PTE</b>)
+          </h3>
+        </div>
+        <div class="item item-more8">
+          <video poster="" id="more8" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/more/cyberpunkfox_pnp_Mixed_loop an orange fluffy fox doll.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            A Dalmatian dog (<b>PTE</b>)
+          </h3>
+        </div>
+
+        <div class="item item-more9">
+          <video poster="" id="more9" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/more/woman2_input.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            Input 
+          </h3>
+        </div>
+        <div class="item item-more10">
+          <video poster="" id="more10" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/more/woman2_our.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+             A beautiful woman in CG style (<b>CSE</b>)
+          </h3>
+        </div>
+        <div class="item item-more11">
+          <video poster="" id="more11" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/more/woman_pnp_Mixed_loop_sculpture.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+             A Greek marble sculpture of a beautiful woman (<b>PTE</b>)
+          </h3>
+        </div>
+        <div class="item item-more12">
+          <video poster="" id="more12" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/more/woman_pnp_Mixed_loop Gogh style painting of a woman.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            Van Gogh style painting of a woman (<b>PTE</b>)
+          </h3>
+        </div>
+
+        <div class="item item-more13">
+          <video poster="" id="more13" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/more/tiger_input.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            Input 
+          </h3>
+        </div>
+        <div class="item item-more14">
+          <video poster="" id="more14" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/more/tiger_our.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+              A tiger in cartoon style (<b>CSE</b>)
+          </h3>
+        </div>
+        <div class="item item-more15">
+          <video poster="" id="more15" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/more/tiger_pnp_Mixed_loop a black and white panda.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+             A black and white panda (<b>PTE</b>)
+          </h3>
+        </div>
+        <div class="item item-more16">
+          <video poster="" id="more16" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/more/tiger_pnp_Mixed_loop a sketch of a cat.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            A sketch of a cat (<b>PTE</b>)
+          </h3>
+        </div>
+
+        <div class="item item-more17">
+          <video poster="" id="more17" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/more/panther_input.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            Input 
+          </h3>
+        </div>
+        <div class="item item-more18">
+          <video poster="" id="more18" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/more/panther_our.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+              A black panther in CG style (<b>CSE</b>)
+          </h3>
+        </div>
+        <div class="item item-more19">
+          <video poster="" id="more19" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/more/panther_pnp_Mixed_loop a Greek marble sculpture of a man.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+              A Greek marble sculpture of a man (<b>PTE</b>)
+          </h3>
+        </div>
+        <div class="item item-more20">
+          <video poster="" id="more20" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/more/panther_pnp_Mixed_loop Van-Gogh_style_portrait_of_a_man.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            Van Gogh style portrait of a man (<b>PTE</b>)
+          </h3>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" style="background-color:#f5f5f5; padding-bottom: 1em;">
+  <div class="container is-max-desktop">
+    <!--/ Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h3 class="title is-4">Long Video Manipulation</h3>
+        <div class="content has-text-justified">
+          <p>
+            We build an effective three-level hybrid framework for very long video manipulation by jointly processing batched frames with inter-batch
+consistency.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>  
+<section class="hero is-light is-small"  style="padding-bottom: 1em;">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carouse3" class="carouse results-carousel">
+        <div class="item item-long1">
+          <video poster="" id="long1" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/farmland_input.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            Input (1500 frames) 
+          </h3>
+        </div>
+        <div class="item item-long2">
+          <video poster="" id="long2" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/farmland_pnp_Mixed_loop  desert, sand dunes and poplars.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            desert, sand dunes and poplars 
+          </h3>
+        </div>
+        <div class="item item-long3">
+          <video poster="" id="long3" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/farmland_pnp_Mixed_loop sea and mountain.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            sea and mountain
+          </h3>
+        </div>
+        <div class="item item-long4">
+          <video poster="" id="long4" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/farmland_pnp_Mixed_loop Van-Gogh style painting of Wheat Field with Reaper.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            Van-Gogh style painting of Wheat Field with Reaper
+          </h3>
+        </div> 
+        <div class="item item-long5">
+          <video poster="" id="long5" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/pool_input.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            Input (478 frames)
+          </h3>
+        </div>
+        <div class="item item-long6">
+          <video poster="" id="long6" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/pool_our.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            A woman swimming in the pool in cartoon style
+          </h3>
+        </div>
+        <div class="item item-long7">
+          <video poster="" id="long7" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/pool_pnp_Mixed_loop a sand sculpture swimming in the sand.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            A sand sculpture swimming in the sand
+          </h3>
+        </div>
+        <div class="item item-long8">
+          <video poster="" id="long8" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/pool_pnp_Mixed_loop a watercolor painting of a woman swimming in the water.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            A watercolor painting of a woman swimming in the water
+          </h3>
+        </div>                 
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" style="background-color:#f5f5f5;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h3 class="title is-4">Comparison on Video Translation</h3>
+        <div class="content has-text-justified">
+          <p>
+            We compare with three zero-shot video translation methods: 
+            <a href="https://github.com/Picsart-AI-Research/Text2Video-Zero" target="_blank">Text2Video-Zero</a>,
+            <a href="https://github.com/YBYBZhang/ControlVideo" target="_blank">ControlVideo</a>, and 
+            <a href="https://github.com/williamyang1991/Rerender_A_Video" target="_blank">Rerender-A-Video</a>.
+            To ensure a fair comparison, all methods employ identical settings of ControlNet, SDEdit, and LoRA.
+            The compared methods that rely on ControlNet conditions without inversion features can suffer a reduction in video editing quality, 
+            particularly if those conditions are degraded by factors such as defocus or motion blur.
+            In contrast, our method utilizes the robust guidance of FRESCO to produce consistently reliable videos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>  
+<section class="hero is-light is-small"  style="padding-bottom: 1em;">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carouse4" class="carouse results-carousel">
+        <div class="item item-comv-1">
+          <video poster="" id="comv-1" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/compare/cat_white_input.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            Input (Prompt: A white cat in pink background)
+          </h3>
+        </div>
+        <div class="item item-comv-2">
+          <video poster="" id="comv-2" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/compare/cat_white_T2VZ.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            Text2Video-Zero
+          </h3>
+        </div>
+        <div class="item item-comv-3">
+          <video poster="" id="comv-3" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/compare/cat_white_CV.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            ControlVideo
+          </h3>
+        </div>
+        <div class="item item-comv-4">
+          <video poster="" id="comv-4" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/compare/cat_white_rerender.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            Rerender-A-Video
+          </h3>
+        </div>
+        <div class="item item-comv-5">
+          <video poster="" id="comv-5" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/compare/cat_white_our.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            FRESCO
+          </h3>
+        </div>
+
+        <div class="item item-comv-6">
+          <video poster="" id="comv-6" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/compare/car_red_input.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            Input (Prompt: A red car turns in the winter)
+          </h3>
+        </div>
+        <div class="item item-comv-7">
+          <video poster="" id="comv-7" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/compare/car_red_T2VZ.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            Text2Video-Zero
+          </h3>
+        </div>
+        <div class="item item-comv-8">
+          <video poster="" id="comv-8" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/compare/car_red_CV.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            ControlVideo
+          </h3>
+        </div>
+        <div class="item item-comv-9">
+          <video poster="" id="comv-9" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/compare/car_red_rerender.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            Rerender-A-Video
+          </h3>
+        </div>
+        <div class="item item-comv-10">
+          <video poster="" id="comv-10" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/compare/car_red_our.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+             FRESCO
+          </h3>
+        </div>
+
+        <div class="item item-comv-11">
+          <video poster="" id="comv-11" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/compare/cat_dog_input.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+             Input (Prompt: A dog in the grass in the sun)
+          </h3>
+        </div>
+        <div class="item item-comv-12">
+          <video poster="" id="comv-12" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/compare/cat_dog_T2VZ.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            Text2Video-Zero
+          </h3>
+        </div>
+        <div class="item item-comv-13">
+          <video poster="" id="comv-13" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/compare/cat_dog_CV.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            ControlVideo
+          </h3>
+        </div>
+        <div class="item item-comv-14">
+          <video poster="" id="comv-14" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/compare/cat_dog_rerender.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+              Rerender-A-Video
+          </h3>
+        </div>
+        <div class="item item-comv-15">
+          <video poster="" id="comv-15" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/compare/cat_dog_our.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+             FRESCO
+          </h3>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background-color:#f5f5f5; padding-bottom: 1em;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h3 class="title is-4">Comparison on Video Editing</h3>
+        <div class="content has-text-justified">
+          <p>
+            We compare with three zero-shot video editing methods: 
+            <a href="https://github.com/ChenyangQiQi/FateZero" target="_blank">FateZero</a>,
+            <a href="https://github.com/duyguceylan/pix2video" target="_blank">Pix2Video</a>, and 
+            <a href="https://github.com/yrcong/flatten" target="_blank">FLATTEN</a>.
+            Compared to inversion-free methods, inversion-based methods are good at preserving input structures 
+            but may suffer artifacts when merging the inversion features and edited features.
+            Our method achieves good temporal consistency and overall editing quality with fewer artifacts.
+          </p>
+        </div>
+      </div>
+    </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carouse5" class="carouse results-carousel">
+        <div class="item item-comt-1">
+          <video poster="" id="comt-1" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/compare2/4.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            Input (Prompt: A fluffy wolf doll)
+          </h3>
+        </div>
+        <div class="item item-comt-2">
+          <video poster="" id="comt-2" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/compare2/4_fatezero.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            FateZero
+          </h3>
+        </div>
+        <div class="item item-comt-3">
+          <video poster="" id="comt-3" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/compare2/4_pix2video.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            Pix2Video
+          </h3>
+        </div>
+        <div class="item item-comt-4">
+          <video poster="" id="comt-4" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/compare2/4_flatten.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            FLATTEN
+          </h3>
+        </div>
+        <div class="item item-comt-5">
+          <video poster="" id="comt-5" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/compare2/4_our.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            FRESCO
+          </h3>
+        </div>
+
+        <div class="item item-comt-6">
+          <video poster="" id="comt-6" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/compare2/10.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            Input (Prompt: A butterfly in cartoon style)
+          </h3>
+        </div>
+        <div class="item item-comt-7">
+          <video poster="" id="comt-7" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/compare2/10_fatezero.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            FateZero
+          </h3>
+        </div>
+        <div class="item item-comt-8">
+          <video poster="" id="comt-8" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/compare2/10_pix2video.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            Pix2Video
+          </h3>
+        </div>
+        <div class="item item-comt-9">
+          <video poster="" id="comt-9" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/compare2/10_flatten.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            FLATTEN
+          </h3>
+        </div>
+        <div class="item item-comt-10">
+          <video poster="" id="comt-10" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/compare2/10_our.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+             FRESCO
+          </h3>
+        </div>
+
+        <div class="item item-comt-11">
+          <video poster="" id="comt-11" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/compare2/5.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+             Input (Prompt: A hamster eats watermelon)
+          </h3>
+        </div>
+        <div class="item item-comt-12">
+          <video poster="" id="comt-12" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/compare2/5_fatezero.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            FateZero
+          </h3>
+        </div>
+
+        <div class="item item-comt-13">
+          <video poster="" id="comt-13" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/compare2/5_pix2video.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+            Pix2Video
+          </h3>
+        </div>
+        <div class="item item-comt-14">
+          <video poster="" id="comt-14" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/compare2/5_flatten.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+              FLATTEN
+          </h3>
+        </div>
+        <div class="item item-comt-15">
+          <video poster="" id="comt-15" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/compare2/5_our.mp4"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered" style="font-size: 1rem;">
+             FRESCO
+          </h3>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{yang2025zero,
+  author    = {Yang, Shuai and Lin, Junxin and Zhou, Yifan and Liu, Ziwei and and Loy, Chen Change},
+  title     = {Zero-Shot Video Translation and Editing with Frame Spatial-Temporal Correspondence},
+  journal   = {arXiv},
+  year      = {2025},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://williamyang1991.github.io/" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This page was built using the <a href="https://nerfies.github.io/" target="_blank">Nerfies website</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+		<script>
+			bulmaCarousel.attach('#results-carousel', {
+				slidesToScroll: 3,
+				slidesToShow: 3,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 10000,
+        pagination: false
+			});
+      bulmaCarousel.attach('#results-carouse2', {
+				slidesToScroll: 4,
+				slidesToShow: 4,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 10000,
+        pagination: false
+			});
+      bulmaCarousel.attach('#results-carouse3', {
+				slidesToScroll: 4,
+				slidesToShow: 4,
+        infinite: true,
+        autoplay: false,
+        pagination: false
+			});
+      bulmaCarousel.attach('#results-carouse4', {
+				initialSlide: 5,
+        slidesToScroll: 5,
+				slidesToShow: 5,
+        infinite: true,
+        autoplay: false,
+        pagination: false
+			});
+      bulmaCarousel.attach('#results-carouse5', {
+				slidesToScroll: 5,
+				slidesToShow: 5,
+        infinite: true,
+        autoplay: false,
+        pagination: false
+			});
+		</script>
+</body>
+</html>
