@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0050)http://www.icst.pku.edu.cn/course/icb/MRS_MCI.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="language" content="english">
+<title>Text Effects Transfer</title>
+<meta name="description" content="Text Effects Transfer">
+<meta name="author" content="Shuai Yang">
+<link rel="icon" type="image/x-icon" href="http://www.icst.pku.edu.cn/favicon.ico">
+<link rel="stylesheet" type="text/css" href="TET/css/project.css">
+</head>
+	<script> 
+	function coming_soon()
+	{
+		alert("We are cleaning up our code to make it more simple and readable");
+	}
+	</script> 
+
+<body>
+<div id="main">
+  
+	<div class="content"><br>
+		<div class="title">
+			<p class="banner"align="center">Accepted by CVPR 2017</p>
+			<h1>Awesome Typography:<br/> Statistics-Based Text Effects Transfer</h1>
+		</div>
+		<div class="authors">
+			<div class='author'>
+				 <A href="mailto:williamyang@pku.edu.cn" style="text-decoration: none">Shuai Yang</A>
+		    </div>
+			<div class='author'>
+				 <A href="mailto:liujiaying@pku.edu.cn" style="text-decoration: none">Jiaying Liu</A>
+			</div>
+			<div class='author'>
+				 <A href="mailto:lianzhouhui@pku.edu.cn" style="text-decoration: none">Zhouhui Lian</A>
+			</div>
+			<div class='author'>
+				 <A href="mailto:guozongming@pku.edu.cn" style="text-decoration: none">Zongming Guo</A>
+			</div>			
+		</div>
+		<br>
+		<div class="overview sec">
+			<div class="picture_wrapper">
+		  		<img src='TET/figures/example.png' width='50%' alt="Teaser" >
+		  		<p style="text-align: left">Figure 1. Overview: Our method takes as input the source text image <i>S</i>, 
+				its counterpart stylized image <i>S'</i> and the target text image <i>T</i>, 
+				then automatically generates the target stylized image <i>T'</i> with the special effects as in <i>S'</i>.</p>
+	  		</div>
+	  	</div>
+
+		<div class="abstract_sec">
+			<h2>Abstract</h2>
+			<div class='desp'>
+				<p style="text-align:justify">
+				 In this work, we explore the problem of generating fantastic special-effects for the typography.
+				 It is quite challenging due to the model diversities to illustrate varied text effects for different characters.
+				 To address this issue, our key idea is to exploit the analytics on the high regularity of the spatial distribution for text effects to guide the synthesis process.
+				 Specifically, we characterize the stylized patches by their normalized positions and the optimal scales to depict their style elements. 
+				 Our method first estimates these two features and derives their correlation statistically.
+				 They are then converted into soft constraints for texture transfer to accomplish adaptive multi-scale texture synthesis and to make style element distribution uniform.
+				 It allows our algorithm to produce artistic typography that fits for both local texture patterns and the global spatial distribution in the example.
+				 Experimental results demonstrate the superiority of our method for various text effects over conventional style transfer methods. 
+				 In addition, we validate the effectiveness of our algorithm with extensive artistic typography library generation.
+				 </p>
+			</div>
+		</div>
+
+		<div class="videos_sec" align='center'>
+			<h2 align="left">Demo</h2>
+			<video width="600" height="450" controls>
+			  <source src="TET/videos/1386_demo.mp4" type="video/mp4">
+			  <source src="TET/videos/1386_demo.ogg" type="video/ogg">
+			  Your browser does not support the video tag.
+			</video>
+		</div>
+
+		<div class="download_sec">
+			<h2>Resources</h2>
+			<div>
+				<li><strong>Paper and Supplementary Material</strong>: <a href="https://arxiv.org/abs/1611.09026">arXiv</a></li>
+				<li><strong>Released Code</strong>: <a href="https://github.com/williamyang1991/Text-Effects-Transfer/tree/release">Matlab implementation</a></li>
+				<li><strong>Data</strong>: <a href="TET/files/data.zip">zip</a> (1.5M, containing examples and inputs in our paper)</li>
+				<li><strong>Image Results</strong>: <a href="TET/files/Image Results.zip">zip</a> (4.0M, containing stylization results in our paper)</li>
+			</div>
+		</div>
+
+		<div class='citation_sec'>
+			<h2>Citation</h2>
+			<p class='bibtex'>@inproceedings{Yang2017Awesome,
+ title={Awesome Typography: Statistics-Based Text Effects Transfer},
+ author={Yang, Shuai and Liu, Jiaying and Lian, Zhouhui and Guo, Zongming},
+ booktitle={IEEE International Conference on Computer Vision and Pattern Recognition},
+ year={2017}
+}</p>
+		</div>
+
+		<div class="experiments_sec">
+			<h2>Selected Results</h2>
+			<div id="images">
+				<table border="0" style="background-color:#F8F8F8; FONT-SIZE:12" >
+				 <tr align="center">
+					<td><img src="TET/figures/he-blank.jpg" alt="" width="100%" ></td>
+					<td><img src="TET/figures/shu-fire3.jpg" alt="" width="100%" ></td>
+					<td><img src="TET/figures/huo4-lava3.jpg" alt="" width="100%" ></td>					
+					<td><img src="TET/figures/p3-rust3.jpg" alt="" width="100%" ></td>
+					<td><img src="TET/figures/shui-drop3.jpg" alt="" width="100%" ></td>
+					<td><img src="TET/figures/qi2-neon3.jpg" alt="" width="100%" ></td>					
+					<td><img src="TET/figures/r3-blink3.jpg" alt="" width="100%" ></td>					
+				 </tr>
+				 <tr align="center">
+					<td><img src="TET/figures/he-text.jpg" alt="" width="100%" ></td>
+					<td><img src="TET/figures/he-flame.jpg" alt="" width="100%" ></td>
+					<td><img src="TET/figures/he-lava.jpg" alt="" width="100%" ></td>					
+					<td><img src="TET/figures/he-rust.jpg" alt="" width="100%" ></td>
+					<td><img src="TET/figures/he-drop.jpg" alt="" width="100%" ></td>
+					<td><img src="TET/figures/he-neon.jpg" alt="" width="100%" ></td>					
+					<td><img src="TET/figures/he-blink.jpg" alt="" width="100%" ></td>					
+				 </tr>
+				 <tr align="center">
+					<td><img src="TET/figures/q-text.jpg" alt="" width="100%" ></td>
+					<td><img src="TET/figures/q-flame.jpg" alt="" width="100%" ></td>
+					<td><img src="TET/figures/q-lava.jpg" alt="" width="100%" ></td>					
+					<td><img src="TET/figures/q-rust.jpg" alt="" width="100%" ></td>
+					<td><img src="TET/figures/q-drop.jpg" alt="" width="100%" ></td>
+					<td><img src="TET/figures/q-neon.jpg" alt="" width="100%" ></td>					
+					<td><img src="TET/figures/q-blink.jpg" alt="" width="100%" ></td>					
+				 </tr>	
+				 <tr align="center">
+					<td><img src="TET/figures/zi2-text.jpg" alt="" width="100%" ></td>
+					<td><img src="TET/figures/zi2-flame.jpg" alt="" width="100%" ></td>
+					<td><img src="TET/figures/zi2-lava.jpg" alt="" width="100%" ></td>					
+					<td><img src="TET/figures/zi2-rust.jpg" alt="" width="100%" ></td>
+					<td><img src="TET/figures/zi2-drop.jpg" alt="" width="100%" ></td>
+					<td><img src="TET/figures/zi2-neon.jpg" alt="" width="100%" ></td>					
+					<td><img src="TET/figures/zi2-blink.jpg" alt="" width="100%" ></td>					
+				 </tr>					 
+				 <tr align="center">
+					<td>target text</td>
+					<td><i>flame</i></td><td><i>lava</i></td><td><i>rust</i></td><td><i>drop</i></td><td><i>pop</i></td><td><i>blink</i></td>
+				</tr>	
+				</table>
+				<CENTER><P>Figure 2. Apply different text effects to representative characters (Chinese, alphabetic, handwriting).</P></CENTER>			
+			</div>
+			<div id="images">
+				<img src="TET/figures/lib2.png" alt="" width="100%" >		
+				<P style="text-align: left">Figure 3. Overview of our flame typography library. The bigger image at the top left corner serves as the example to generate the other 774 characters.</P>	
+			</div>			
+			
+		</div>
+		<br></br> 
+
+
+	<p class="banner"align="center">Last update: March 2017</p>
+  </div>
+</div>
+</body>
+</html>
