@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0050)http://www.icst.pku.edu.cn/course/icb/MRS_MCI.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="language" content="english">
+<title>Text Effects Transfer</title>
+<meta name="description" content="Text Effects Transfer">
+<meta name="author" content="Shuai Yang">
+<link rel="icon" type="image/x-icon" href="http://www.icst.pku.edu.cn/favicon.ico">
+<link rel="stylesheet" type="text/css" href="UTS/css/project.css">
+</head>
+	<script> 
+	function coming_soon()
+	{
+		alert("We are cleaning up our code to make it more simple and readable");
+	}
+	</script> 
+
+<body>
+<div id="main">
+  
+	<div class="content"><br>
+		<div class="title">
+			<p class="banner"align="center">Accepted by IEEE Trans. on Image Processing</p>
+			<h1>Context-Aware Text-Based Binary Image <br/>Stylization and Synthesis</h1>
+		</div>
+		<div class="authors">
+			<div class='author'>
+				 <A href="mailto:williamyang@pku.edu.cn" style="text-decoration: none">Shuai Yang</A>
+		    </div>
+			<div class='author'>
+				 <A href="mailto:liujiaying@pku.edu.cn" style="text-decoration: none">Jiaying Liu</A>
+			</div>
+			<div class='author'>
+				 <A href="mailto:yangwenhan@pku.edu.cn" style="text-decoration: none">Wenhan Yang</A>
+			</div>
+			<div class='author'>
+				 <A href="mailto:guozongming@pku.edu.cn" style="text-decoration: none">Zongming Guo</A>
+			</div>			
+		</div>
+		<br>
+		<div class="overview sec">
+			<div class="picture_wrapper">
+		  		<img src='UTS/figures/example.png' width='100%' alt="Teaser" >
+		  		<p style="text-align: justify">Figure 1. Our method provides an aesthetic driven automatic tool to design artistic typography, creating original and unique artworks. Given a souce style image <i>S'</i> and any target text <i>T</i>, our algorithm transfers multiple style modalities from <i>S'</i> to <i>T</i>, and seamlessly embeds the stylized text in a reasonable position of the backgound image <i>I</i>. Application (right): Computer aided poster design.</p>
+	  		</div>
+	  	</div>
+
+		<div class="abstract_sec">
+			<h2>Abstract</h2>
+			<div class='desp'>
+				<p style="text-align:justify">
+				 In this work, we present a new framework for the stylization of text-based binary images. First, our method stylizes the stroke-based geometric shape like text, symbols and icons in the target binary image based on an input style image. Second, the composition of the stylized geometric shape and a background image is explored. To accomplish the task, we propose legibility-preserving structure and texture transfer algorithms, which progressively narrow the visual differences between the binary image and the style image. The stylization is then followed by a context-aware layout design algorithm, where cues for both seamlessness and aesthetics are employed to determine the optimal layout of the shape in the background. Given the layout, the binary image is seamlessly embedded into the background by texture synthesis under a context-aware boundary constraint. According to the contents of binary images, our method can be applied to many fields. We show that the proposed method is capable of addressing the unsupervised text stylization problem and is superior to state-of-the-art style transfer methods in automatic artistic typography creation. Besides, extensive experiments on various tasks, such as visual-textual presentation synthesis, icon/symbol rendering and structure-guided image inpainting, demonstrate the effectiveness of the proposed method.
+				 </p>
+			</div>
+		</div>
+
+		<div class="abstract_sec">
+			<h2>Framework</h2>
+			<div class="images">
+		  		<img src='UTS/figures/framework.png' width='100%' alt="Teaser" >
+		  		<p style="text-align: justify">Figure 2. Overview of the proposed algorithm. Our method consists of two subtasks: <b>style transfer</b> for stylizing the target text-based binary image <i>T</i> based on a style image <i>S'</i> and <b>layout design</b> for synthesizing the stylized image into a background image <i>I</i>. We first extract a guidance map <i>S</i> from <i>S'</i> to establish a mapping with <i>T</i>. Then a structure adjustment is adopted to bridge the structural gap between <i>T</i> and <i>S</i>. Under the guidance of <i>S</i>-hat and <i>T</i>-hat, the stylized image is generated via texture transfer. To embed the target shape of <i>T</i> into the background image, we develop a method to determine the image layout <i>R</i>-hat. The colors of <i>I</i> and <i>S'</i> are adjusted and the contextual information of <i>I</i> is used to constrain the texture transfer for visual seamlessness. This flowchart gives an example of synthesizing a visual-textual presentation when <i>T</i> is a text image. The operation modules are colored to show the subtasks they belong to, where dark blue and dark red represent style transfer and layout design, respectively.</p>
+	  		</div>
+	  	</div>		
+
+		<div class="download_sec">
+			<h2>Resources</h2>
+			<div>
+				<li><strong>Paper</strong>: <a href="https://arxiv.org/abs/1810.03767">arXiv</a></li>
+				<li><strong>Supplementary Material</strong>: <a href="UTS/files/TIP-Supp.pdf">pdf</a> (12.9M)</li>
+				<li><strong>Image Results</strong>: <a href="UTS/files/Image Results.zip">zip</a> (16.4M, containing stylization results in our paper)</li>
+				<li><strong>Related Projects:</strong>: <a href="http://www.icst.pku.edu.cn/struct/Projects/TET.html">Awesome Typography:
+				Statistics-Based Text Effects Transfer (CVPR 2017)</a></li>
+			</div>
+		</div>
+
+		<div class='citation_sec'>
+			<h2>Citation</h2>
+			<p class='bibtex'>@article{Yang2018Context, 
+ author={Yang, Shuai and Liu, Jiaying and Yang, Wenhan and Guo, Zongming}, 
+ journal={IEEE Transactions on Image Processing}, 
+ title={Context-Aware Text-Based Binary Image Stylization and Synthesis}, 
+ year={2018}, 
+ volume={PP}, 
+ number={99}, 
+ pages={1-13},
+ doi={10.1109/TIP.2018.2873064}
+}</p>
+		</div>
+
+		<div class="experiments_sec">
+			<h2>Selected Results</h2>
+			<div id="images">
+				<img src="UTS/figures/constellation.png" alt="" width="100%" >		
+				<P style="text-align: left">Figure 3. Rendering rippling Zodiac symbols using a photo of water on the left.</P>	
+			</div>					
+			<div id="images">
+				<table border="0" style="background-color:#F8F8F8; FONT-SIZE:12" >
+				 <tr align="center">
+					<td width="304px"><img src="UTS/figures/island-love.jpg" alt="" width="100%" ></td>
+					<td width="265px"><img src="UTS/figures/cloud-beauty.jpg" alt="" width="100%" ></td>
+					<td width="281px"><img src="UTS/figures/flame-huoyan.jpg" alt="" width="100%" ></td>
+				</tr>				 
+				 <tr align="center">
+					<td><i>barrier reef</i></td><td><i>cloud</i></td><td><i>flame</i></td></td>
+				</tr>	
+				</table>
+				<p style="text-align: justify">Figure 4. Visual-textual presentation synthesis. For each group, three images in the upper row are <i>I</i>, <i>S'</i> and <i>T</i>, respectively. The lower one is our result.</p>		
+			</div>	
+		</div>
+
+	<div class="reference_sec">
+		<h2>Reference</h2>
+		  <div class="bib">
+			<p>[1] A. Hertzmann, C. E. Jacobs, N. Oliver, B. Curless, and D. H. Salesin. Image analogies. ACM Conference on Computer Graphics and Interactive Techniques, 2001.</p>
+			<p>[2] A. J. Champandard. Semantic style transfer and turning two-bit doodles into fine artworks. arXiv:1603.01768, 2016</p>
+			<p>[3] S. Yang, J. Liu, Z. Lian, and Z. Guo. Awesome typography: Statistics-based text effects transfer. CVPR 2017.</p>
+			<p>[4] A. A. Efros and W. T. Freeman. Image quilting for texture synthesis and transfer. ACM Conference on Computer Graphics and Interactive Techniques, 2001.</p>
+			<p>[5] L. A. Gatys, A. S. Ecker, and M. Bethge. Image style transfer using convolutional neural networks. CVPR 2016.</p>
+			<p>[6] C. Li and M. Wand. Combining markov random fields and convolutional neural networks for image synthesis. CVPR 2016.</p>
+		  </div>
+	</div>
+		<br></br> 
+	<p class="banner"align="center">Last update: October 2018</p>
+  </div>
+</div>
+</body>
+</html>
